@@ -1,0 +1,131 @@
+# Moodle .htaccess
+# Moodle 5.x için önerilen ayarlar
+
+# -----------------------------------------------------------------------
+# PHP Ayarları
+# -----------------------------------------------------------------------
+
+# max_input_vars en az 5000 olmalı (Moodle gereksinimi)
+<IfModule mod_php.c>
+    php_value max_input_vars 5000
+    php_value memory_limit 256M
+    php_value post_max_size 64M
+    php_value upload_max_filesize 64M
+    php_value max_execution_time 300
+    php_flag magic_quotes_gpc off
+    php_flag magic_quotes_runtime off
+    php_flag register_globals off
+</IfModule>
+
+# PHP 8.x için (php_admin değil php değerlerini kullanıyoruz)
+<IfModule mod_php8.c>
+    php_value max_input_vars 5000
+    php_value memory_limit 256M
+    php_value post_max_size 64M
+    php_value upload_max_filesize 64M
+    php_value max_execution_time 300
+</IfModule>
+
+# -----------------------------------------------------------------------
+# Slash Arguments (slasharguments) Desteği
+# -----------------------------------------------------------------------
+
+# AcceptPathInfo direktifi slash arguments için gerekli
+AcceptPathInfo On
+
+# -----------------------------------------------------------------------
+# URL Yeniden Yazma (Moodle Clean URLs)
+# -----------------------------------------------------------------------
+
+DirectoryIndex index.php index.html index.htm
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Moodle slash arguments desteği
+    RewriteRule ^(.*.php)(/.*)$ $1 [PT,L]
+
+    # index.php olmadan erişim
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /index.php [L]
+</IfModule>
+
+# -----------------------------------------------------------------------
+# Güvenlik Ayarları
+# -----------------------------------------------------------------------
+
+# Hassas dosyalara erişimi engelle
+<FilesMatch "^(config\.php|install\.php|upgrade\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Gizli dosyalara erişimi engelle (.git, .env vb.)
+<FilesMatch "^\.(git|env|htpasswd|DS_Store)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# config.php dosyasına doğrudan erişimi engelle
+<Files "config.php">
+    Order deny,allow
+    Deny from all
+</Files>
+
+# Dizin listelemeyi kapat
+Options -Indexes
+
+# Sunucu bilgilerini gizle
+ServerSignature Off
+
+# -----------------------------------------------------------------------
+# MIME Türleri
+# -----------------------------------------------------------------------
+
+<IfModule mod_mime.c>
+    AddType application/x-font-woff .woff
+    AddType application/x-font-woff2 .woff2
+    AddType image/svg+xml .svg
+</IfModule>
+
+# -----------------------------------------------------------------------
+# Sıkıştırma (Performans)
+# -----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+</IfModule>
+
+# -----------------------------------------------------------------------
+# Tarayıcı Önbelleği (Performans)
+# -----------------------------------------------------------------------
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType application/x-font-woff "access plus 1 month"
+</IfModule>
+
+# -----------------------------------------------------------------------
+# Güvenlik Başlıkları
+# -----------------------------------------------------------------------
+
+<IfModule mod_headers.c>
+    # Clickjacking koruması
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # XSS koruması
+    Header always set X-XSS-Protection "1; mode=block"
+    # MIME sniffing koruması
+    Header always set X-Content-Type-Options "nosniff"
+    # Referrer politikası
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

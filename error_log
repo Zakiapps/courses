@@ -1,0 +1,429 @@
+[01-Apr-2026 20:32:39 UTC] PHP Warning:  Constant PASSWORD_DEFAULT already defined in /home/uxfdynlkcv/gt4t.baacher.com/update_pass.php on line 17
+[01-Apr-2026 21:12:28 UTC] PHP Warning:  Constant PASSWORD_DEFAULT already defined, this will be an error in PHP 9 in /home/uxfdynlkcv/gt4t.baacher.com/update_pass.php on line 17
+[02-Apr-2026 15:22:37 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:22:37 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:37 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:37 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:37 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(29): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:22:38 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:22:38 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:38 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:38 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:38 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(29): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:22:49 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:22:49 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:49 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:49 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:22:49 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(29): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:25:44 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:25:44 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:25:44 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:25:44 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:25:44 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(33): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:25:50 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:25:50 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:25:50 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:25:50 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:25:50 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(33): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:27:34 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:27:34 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:27:34 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:27:34 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:27:34 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(33): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:29:08 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:29:08 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:29:08 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:29:08 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:29:08 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(33): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:29:13 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:29:13 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:29:13 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:29:13 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:29:13 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(33): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:30:49 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:30:49 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:30:49 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:30:49 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:30:49 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:32:32 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:32:32 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:32:32 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:32:32 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:32:32 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:32:34 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:32:34 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:32:34 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:32:34 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:32:34 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:44:33 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:44:33 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:44:33 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:44:33 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:44:33 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:48:40 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:48:40 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:48:40 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:48:40 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:48:40 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:48:45 UTC] PHP Warning:  file_get_contents(/home/uxfdynlkcv/gt4t.baacher.com/lib/components.json): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 867
+[02-Apr-2026 15:48:45 UTC] PHP Warning:  Undefined array key "mod" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:48:45 UTC] PHP Warning:  Undefined array key "editor" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:48:45 UTC] PHP Warning:  Undefined array key "tool" in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 776
+[02-Apr-2026 15:48:45 UTC] PHP Fatal error:  Uncaught Exception: Unknown subsystem 'cache' for legacy classes entry of 'cache' in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php:1931
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(1049): core\component::load_legacy_classes()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(661): core\component::fill_classmap_cache()
+#2 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(601): core\component::fill_all_caches()
+#3 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(454): core\component::get_cache_content()
+#4 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php(229): core\component::init()
+#5 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/dmllib.php(65): core\component::classloader()
+#6 /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php(627): require_once('/home/uxfdynlkc...')
+#7 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once('/home/uxfdynlkc...')
+#8 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#9 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/classes/component.php on line 1931
+[02-Apr-2026 15:50:39 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 26
+[02-Apr-2026 15:50:39 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lms/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 29
+[02-Apr-2026 15:50:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lms/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 29
+[02-Apr-2026 15:50:43 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 26
+[02-Apr-2026 15:50:43 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lms/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 29
+[02-Apr-2026 15:50:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lms/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(27): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 29
+[02-Apr-2026 15:52:53 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lms/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 29
+[02-Apr-2026 15:52:53 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lms/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/lms/config.php(33): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/lms/index.php(30): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lms/lib/setup.php on line 29
+[02-Apr-2026 16:23:02 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:23:02 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:23:02 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(34): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:23:07 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:23:07 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:23:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(34): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:23:39 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:23:39 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:23:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(34): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:24:54 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:24:54 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:24:54 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(29): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:24:57 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:24:57 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:24:57 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(29): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:26:47 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:26:47 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:26:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(28): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:27:49 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:27:49 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:27:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(28): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:28:08 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:28:08 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:28:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(29): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:30:19 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:30:19 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:30:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(28): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:30:48 UTC] PHP Warning:  Undefined property: stdClass::$libdir in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 26
+[02-Apr-2026 16:30:48 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:30:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(28): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 16:32:56 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 28
+[02-Apr-2026 16:32:56 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:28
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 28
+[02-Apr-2026 16:35:16 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 53
+[02-Apr-2026 16:35:16 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:53
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 53
+[02-Apr-2026 16:40:17 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 34
+[02-Apr-2026 16:40:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:34
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 34
+[02-Apr-2026 16:41:48 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 29
+[02-Apr-2026 16:41:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 29
+[02-Apr-2026 16:43:26 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 30
+[02-Apr-2026 16:43:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:30
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 30
+[02-Apr-2026 16:44:38 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 30
+[02-Apr-2026 16:44:38 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:30
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 30
+[02-Apr-2026 16:46:05 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:46:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:32
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:46:06 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:46:06 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:32
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:46:07 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:46:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:32
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:49:15 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:49:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:32
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:49:17 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:49:17 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:32
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:51:24 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:51:24 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:32
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 32
+[02-Apr-2026 16:52:49 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 27
+[02-Apr-2026 16:52:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/config.php:27
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/index.php(59): require_once()
+#1 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/config.php on line 27
+[02-Apr-2026 17:05:20 UTC] PHP Warning:  require_once(/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php): Failed to open stream: No such file or directory in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 17:05:20 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/uxfdynlkcv/gt4t.baacher.com/public/lib/setup.php' (include_path='.:/opt/alt/php85/usr/share/pear:/opt/alt/php85/usr/share/php:/usr/share/pear:/usr/share/php') in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php:29
+Stack trace:
+#0 /home/uxfdynlkcv/gt4t.baacher.com/config.php(27): require_once()
+#1 /home/uxfdynlkcv/gt4t.baacher.com/index.php(8): require_once('/home/uxfdynlkc...')
+#2 {main}
+  thrown in /home/uxfdynlkcv/gt4t.baacher.com/lib/setup.php on line 29
+[02-Apr-2026 17:11:58 UTC] PHP Warning:  Constant PASSWORD_DEFAULT already defined, this will be an error in PHP 9 in /home/uxfdynlkcv/gt4t.baacher.com/update_pass.php on line 17
