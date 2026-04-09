@@ -678,6 +678,46 @@
             font-family: $gt4t-font-primary;
             font-weight: 700;
         }
+
+        .coursebox,
+        .card,
+        .course-info-container {
+            background: #fff !important;
+            color: $gt4t-dark-text !important;
+            border: 1px solid #d4edda !important;
+            border-radius: 12px !important;
+            box-shadow: 0 2px 12px rgba($gt4t-mid-green, .10) !important;
+            border-left: 4px solid $gt4t-mid-green !important;
+            transition: box-shadow .2s, transform .2s;
+
+            &:hover {
+                box-shadow: 0 4px 20px rgba($gt4t-mid-green, .18) !important;
+                transform: translateY(-2px);
+            }
+
+            h3, h3 a, .coursename a, .card-title a {
+                color: $gt4t-dark-green !important;
+                font-family: $gt4t-font-primary !important;
+                font-weight: 600 !important;
+            }
+
+            .content, .card-body, .summary, p, .card-text {
+                color: #333 !important;
+                font-family: $gt4t-font-primary !important;
+            }
+
+            .teachers span, .teachers a {
+                color: $gt4t-mid-green !important;
+            }
+
+            .categoryname, .badge {
+                background: $gt4t-lime !important;
+                color: $gt4t-dark-green !important;
+                border-radius: 4px !important;
+                padding: 2px 8px !important;
+                font-weight: 600 !important;
+            }
+        }
     }
 
     // ────────────────────────────────────────────────────────
