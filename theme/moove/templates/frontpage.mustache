@@ -24,24 +24,13 @@
     * sitename - The name of the site
     * output - The core renderer for the page
     * bodyattributes - attributes for the body tag as a string of html attributes
-    * gt4t_hero - Hero section data
-    * gt4t_education - Education section data
-    * gt4t_stats - Stats array
-    * gt4t_domains - Domains section data
-    * gt4t_innovators - Innovators section data
-    * gt4t_change - Change section data
-    * gt4t_movement - Movement section data
-    * gt4t_footer - Footer extra data
+    * gt4t_hero, gt4t_education, gt4t_stats, gt4t_domains,
+      gt4t_innovators, gt4t_change, gt4t_movement
 
     Example context (json):
     {
         "sitename": "GT4T",
-        "output": {
-            "doctype": "<!DOCTYPE html>",
-            "page_title": "GT4T",
-            "favicon": "favicon.ico",
-            "main_content": ""
-        },
+        "output": { "doctype": "<!DOCTYPE html>", "page_title": "GT4T", "favicon": "favicon.ico", "main_content": "" },
         "bodyattributes": "",
         "gt4t": true
     }
@@ -53,6 +42,129 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+<style>
+/* GT4T Critical Inline Styles */
+.gt4t-container{max-width:1200px;margin:0 auto;padding:0 2rem}
+.gt4t-btn{display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;transition:all .3s ease;border:none;cursor:pointer}
+.gt4t-btn--primary{background:#19B35C;color:#fff}
+.gt4t-btn--primary:hover{background:#148f4a;color:#fff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(25,179,92,.4)}
+.gt4t-btn--dark{background:#053225;color:#fff}
+.gt4t-btn--dark:hover{background:#0a4a38;color:#fff;transform:translateY(-2px)}
+
+/* HERO */
+.gt4t-hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;overflow:hidden;background:linear-gradient(160deg,rgba(5,50,37,.95) 0%,rgba(5,50,37,.8) 35%,rgba(10,80,50,.7) 60%,rgba(25,179,92,.5) 100%),linear-gradient(to bottom right,#053225,#19B35C);background-size:cover}
+.gt4t-hero__overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(25,179,92,.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(193,255,114,.06) 0%,transparent 50%);pointer-events:none}
+.gt4t-hero__content{position:relative;z-index:2;max-width:800px;padding:0 2rem;margin-left:10%}
+.gt4t-hero__heading{font-family:'Work Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;color:#fff;margin-bottom:1.5rem;letter-spacing:-.02em}
+.gt4t-hero__subtitle{font-family:'Work Sans',sans-serif;font-weight:400;font-size:clamp(1rem,1.5vw,1.25rem);line-height:1.6;color:rgba(255,255,255,.9);margin-bottom:2rem;max-width:650px}
+.gt4t-hero__scroll{position:absolute;bottom:5rem;left:50%;transform:translateX(-50%);cursor:pointer;animation:gt4tBounce 2s infinite;z-index:3;opacity:.7;transition:opacity .3s}
+.gt4t-hero__scroll:hover{opacity:1}
+@keyframes gt4tBounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+.gt4t-hero__wave{position:absolute;bottom:0;left:0;width:100%;z-index:2;line-height:0}
+.gt4t-hero__wave svg{width:100%;height:160px;display:block}
+
+/* EDUCATION */
+.gt4t-education{background:linear-gradient(180deg,#C1FF72 0%,#d4ff8e 40%,#e8ffbe 100%);padding:5rem 0;color:#0D0D0D}
+.gt4t-education__heading{font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#0D0D0D;margin-bottom:1.5rem}
+.gt4t-education__text{font-size:1rem;line-height:1.7;color:#0D0D0D;margin-bottom:1rem;max-width:900px}
+
+/* STATS */
+.gt4t-stats{display:flex;gap:1.5rem;margin-top:3rem;justify-content:center;flex-wrap:wrap}
+.gt4t-stats__card{flex:1;min-width:240px;max-width:300px}
+.gt4t-stats__card-inner{color:#fff;padding:2.5rem 1.5rem;border-radius:12px;transform:skewX(-4deg);transition:transform .3s ease,box-shadow .3s ease;min-height:220px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.15);overflow:hidden;position:relative}
+.gt4t-stats__card:nth-child(1) .gt4t-stats__card-inner{background:linear-gradient(135deg,rgba(5,50,37,.8),rgba(25,80,50,.65)),linear-gradient(to bottom right,#2d6a4f,#1b4332)}
+.gt4t-stats__card:nth-child(2) .gt4t-stats__card-inner{background:linear-gradient(135deg,rgba(10,60,40,.75),rgba(40,100,60,.6)),linear-gradient(to bottom right,#40916c,#2d6a4f)}
+.gt4t-stats__card:nth-child(3) .gt4t-stats__card-inner{background:linear-gradient(135deg,rgba(5,50,37,.75),rgba(30,90,55,.6)),linear-gradient(to bottom right,#52b788,#2d6a4f)}
+.gt4t-stats__card-inner:hover{transform:skewX(-4deg) translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.gt4t-stats__number{font-family:'Orbitron',sans-serif;font-weight:700;font-size:2.5rem;display:block;margin-bottom:.75rem;color:#fff;transform:skewX(4deg);text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.gt4t-stats__label{font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;line-height:1.4;transform:skewX(4deg);text-shadow:0 1px 4px rgba(0,0,0,.2)}
+
+/* DOMAINS */
+.gt4t-domains{background:#fff;padding:5rem 0}
+.gt4t-domains__heading{font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#0D0D0D;margin-bottom:1rem}
+.gt4t-domains__subtitle{font-size:1rem;line-height:1.6;color:#555;margin-bottom:3rem;max-width:700px}
+.gt4t-domains__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.gt4t-domains__card-accent{height:8px;border-radius:4px;margin-bottom:1.5rem}
+.gt4t-domains__card--green .gt4t-domains__card-accent{background:#19B35C}
+.gt4t-domains__card--cyan .gt4t-domains__card-accent{background:#00D4D4}
+.gt4t-domains__card--teal .gt4t-domains__card-accent{background:#006D77}
+.gt4t-domains__card-title{font-family:'Work Sans',sans-serif;font-weight:700;font-size:1.25rem;color:#0D0D0D;margin-bottom:.75rem}
+.gt4t-domains__card-text{font-size:.95rem;line-height:1.6;color:#555}
+
+/* INNOVATORS */
+.gt4t-innovators{background:#00D4D4;color:#0D0D0D;padding:5rem 0;position:relative;overflow:hidden}
+.gt4t-innovators__grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.gt4t-innovators__heading{font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#053225;margin-bottom:1.5rem}
+.gt4t-innovators__text p{font-size:1rem;line-height:1.7;color:#0D0D0D;margin-bottom:1rem}
+.gt4t-innovators__map{display:flex;justify-content:center;align-items:center}
+.gt4t-innovators__map img{width:100%;max-width:450px;opacity:1}
+
+/* CHANGE */
+.gt4t-change{background:#00D4D4;padding:5rem 0;position:relative;overflow:hidden;color:#0D0D0D}
+.gt4t-change__blob{position:absolute;border-radius:50%;z-index:0}
+.gt4t-change__blob--1{width:450px;height:450px;background:#19B35C;left:-80px;bottom:-120px;opacity:.75}
+.gt4t-change__blob--2{width:280px;height:280px;background:#C1FF72;left:120px;bottom:-30px;opacity:.55}
+.gt4t-change__grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.gt4t-change__image{display:flex;justify-content:center;align-items:center}
+.gt4t-change__image-frame{width:320px;height:320px;border-radius:50%;border:8px solid #C1FF72;background:linear-gradient(160deg,#1a1a3e 0%,#0d2b4a 40%,#006D77 100%);box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.gt4t-change__heading{font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:#053225;margin-bottom:1rem}
+.gt4t-change__text p{font-size:.95rem;line-height:1.7;color:#0D0D0D;margin-bottom:1.5rem}
+
+/* MOVEMENT */
+.gt4t-movement{background:#fff;padding:4rem 0 5rem}
+.gt4t-movement__inner{text-align:center}
+.gt4t-movement__rocket-wrapper{position:relative;display:inline-block;margin-bottom:1rem}
+.gt4t-movement__rocket{position:relative;z-index:2}
+.gt4t-movement__rocket img{width:140px;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))}
+.gt4t-movement__clouds{position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:400px;height:200px;pointer-events:none;z-index:1}
+.gt4t-movement__cloud{position:absolute;border-radius:50%}
+.gt4t-movement__cloud--1{width:200px;height:80px;bottom:20px;left:50%;transform:translateX(-50%);border-radius:40px;background:radial-gradient(ellipse,rgba(190,190,190,.35) 0%,transparent 70%)}
+.gt4t-movement__cloud--2{width:120px;height:60px;bottom:40px;left:30%;border-radius:30px;background:radial-gradient(ellipse,rgba(200,200,200,.3) 0%,transparent 70%)}
+.gt4t-movement__cloud--3{width:140px;height:70px;bottom:35px;right:25%;border-radius:35px;background:radial-gradient(ellipse,rgba(195,195,195,.3) 0%,transparent 70%)}
+.gt4t-movement__cloud--4{width:260px;height:100px;bottom:0;left:50%;transform:translateX(-50%);border-radius:50px;background:radial-gradient(ellipse,rgba(210,210,210,.3) 0%,transparent 65%)}
+.gt4t-movement__cloud--5{width:320px;height:120px;bottom:-20px;left:50%;transform:translateX(-50%);border-radius:60px;background:radial-gradient(ellipse,rgba(220,220,220,.25) 0%,transparent 60%)}
+.gt4t-movement__heading{font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#053225;margin-bottom:.75rem}
+.gt4t-movement__subtitle{font-size:1.1rem;color:#555;margin-bottom:2rem}
+
+/* MOODLE CONTENT */
+.gt4t-moodle-content{background:#FAFAFA}
+.gt4t-moodle-content #page-content{padding:2rem 0;margin-bottom:0;background:#FAFAFA}
+.gt4t-moodle-content #frontpage-available-course-list h2{text-align:center}
+
+/* FAQ */
+.gt4t-faq{padding:4rem 0;background:#FAFAFA}
+.gt4t-faq h2{text-align:center;font-family:'Work Sans',sans-serif;font-weight:700;margin-bottom:2rem}
+.gt4t-faq .accordion{width:100%;max-width:900px;margin:0 auto}
+.gt4t-faq .accordion-button:not(.collapsed){background:#19B35C;color:#fff}
+.gt4t-faq .accordion-item{border-color:#19B35C}
+
+/* RESPONSIVE */
+@media(max-width:991px){
+    .gt4t-innovators__grid,.gt4t-change__grid{grid-template-columns:1fr;text-align:center}
+    .gt4t-innovators__map{order:-1}.gt4t-innovators__map img{max-width:300px}
+    .gt4t-change__image{order:-1}.gt4t-change__image-frame{width:250px;height:250px}
+}
+@media(max-width:767px){
+    .gt4t-hero__content{margin-left:5%;padding:0 1rem}
+    .gt4t-stats{flex-direction:column;align-items:center}
+    .gt4t-stats__card{max-width:100%;width:100%;min-width:auto}
+    .gt4t-stats__card-inner{transform:none}.gt4t-stats__number,.gt4t-stats__label{transform:none}
+    .gt4t-domains__grid{grid-template-columns:1fr}
+    .gt4t-container{padding:0 1.5rem}
+    .gt4t-hero__wave svg{height:100px}
+    .gt4t-movement__clouds{width:280px}
+}
+@media(max-width:576px){
+    .gt4t-hero__heading{font-size:2rem}
+    .gt4t-hero__content{margin-left:0;text-align:center}
+    .gt4t-hero__wave svg{height:60px}
+    .gt4t-education,.gt4t-domains,.gt4t-change,.gt4t-movement{padding:3rem 0}
+    .gt4t-change__blob{display:none}
+    .gt4t-change__image-frame{width:200px;height:200px}
+    .gt4t-movement__clouds{display:none}
+}
+</style>
+
 {{> core/local/toast/wrapper}}
 <div id="page-wrapper" class="d-print-block">
 
@@ -62,15 +174,10 @@
 
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container">
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! SECTION 1: HERO                            }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ HERO ═══ }}
         {{#gt4t_hero}}
         <section class="gt4t-hero">
             <div class="gt4t-hero__overlay"></div>
-            <div class="gt4t-hero__leaf">
-                <img src="{{wwwroot}}/theme/moove/pix/gt4t_hero_leaf.svg" alt="" aria-hidden="true">
-            </div>
             <div class="gt4t-hero__content">
                 <h1 class="gt4t-hero__heading">{{{heading}}}</h1>
                 <p class="gt4t-hero__subtitle">{{{subtitle}}}</p>
@@ -91,9 +198,7 @@
         </section>
         {{/gt4t_hero}}
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! SECTION 2: TRANSFORMING HIGHER EDUCATION   }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ EDUCATION ═══ }}
         {{#gt4t_education}}
         <section class="gt4t-education">
             <div class="gt4t-container">
@@ -116,9 +221,7 @@
         </section>
         {{/gt4t_education}}
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! SECTION 3: WHERE INNOVATION MEETS SUSTAIN. }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ DOMAINS ═══ }}
         {{#gt4t_domains}}
         <section class="gt4t-domains">
             <div class="gt4t-container">
@@ -137,9 +240,7 @@
         </section>
         {{/gt4t_domains}}
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! SECTION 4: POWERED BY EUROPE'S INNOVATORS  }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ INNOVATORS ═══ }}
         {{#gt4t_innovators}}
         <section class="gt4t-innovators">
             <div class="gt4t-container">
@@ -151,16 +252,14 @@
                         <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--primary">{{{cta_text}}}</a>
                     </div>
                     <div class="gt4t-innovators__map">
-                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_europe_map.svg" alt="European innovation network" aria-hidden="true">
+                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_europe_map.svg" alt="European innovation network">
                     </div>
                 </div>
             </div>
         </section>
         {{/gt4t_innovators}}
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! SECTION 5: BE PART OF THE CHANGE           }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ CHANGE ═══ }}
         {{#gt4t_change}}
         <section class="gt4t-change">
             <div class="gt4t-change__blob gt4t-change__blob--1"></div>
@@ -180,9 +279,7 @@
         </section>
         {{/gt4t_change}}
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! SECTION 6: JOIN THE MOVEMENT               }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ MOVEMENT ═══ }}
         {{#gt4t_movement}}
         <section class="gt4t-movement">
             <div class="gt4t-container gt4t-movement__inner">
@@ -205,9 +302,7 @@
         </section>
         {{/gt4t_movement}}
 
-        {{! ═══════════════════════════════════════════ }}
-        {{! MOODLE CORE CONTENT (hidden for guests)    }}
-        {{! ═══════════════════════════════════════════ }}
+        {{! ═══ MOODLE CONTENT ═══ }}
         <div id="topofscroll" class="gt4t-moodle-content">
             <div id="page-content" class="d-print-block main-inner">
                 <div id="region-main-box">
@@ -220,12 +315,11 @@
             </div>
         </div>
 
-        {{! FAQ section kept for admin-configured FAQs }}
+        {{! FAQ }}
         {{#faqenabled}}
             <section id="faq" class="gt4t-faq scale-up scale-up-show">
                 <div class="gt4t-container">
                     <h2>{{#str}}faq, theme_moove{{/str}}</h2>
-
                     <div class="accordion" id="accordion-faq">
                         {{#faq}}
                             <div class="accordion-item mb-1">
@@ -264,17 +358,11 @@
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.setAttribute('data-bs-theme', 'dark');
         }
-
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            const newColorScheme = event.matches ? "dark" : "light";
-            document.body.setAttribute('data-bs-theme', newColorScheme);
+            document.body.setAttribute('data-bs-theme', event.matches ? "dark" : "light");
         });
-
-        // Smooth scroll for hero chevron
         $('.gt4t-hero__scroll').on('click', function() {
-            $('html, body').animate({
-                scrollTop: $('.gt4t-education').offset().top - 70
-            }, 800);
+            $('html, body').animate({ scrollTop: $('.gt4t-education').offset().top - 70 }, 800);
         });
     });
 {{/js}}
