@@ -11,6 +11,28 @@
     height: 70px;
     background-color: var(--moove-navbar-bg-color);
 
+    // Navbar üzerindeki tüm metinler ve ikonlar beyaz olsun
+    color: #fff;
+
+    // Kullanıcı adı, saat, diğer metin elementleri
+    .navbar-nav,
+    .usermenu,
+    .usermenu .nav-link,
+    [data-region="usermenu"],
+    .usertext,
+    .userbutton,
+    .usernamewithavatar {
+        color: #fff !important;
+    }
+
+    // İkonlar (arama, bildirim vb.)
+    .icon,
+    .fa,
+    i[class*="fa-"],
+    .popover-region-toggle .icon {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
     .primary-navigation {
         .navigation {
             height: 70px;
@@ -19,10 +41,18 @@
                 height: 70px;
                 border: none;
                 border-radius: 0;
+                color: rgba(255, 255, 255, 0.85) !important;
 
                 &.active {
                     font-weight: 700;
-                    border-bottom: 2px solid #fff;
+                    color: #fff !important;
+                    border-bottom: 2px solid $gt4t-light-green;
+                }
+
+                &:hover,
+                &:focus {
+                    color: $gt4t-light-green !important;
+                    background-color: rgba(255, 255, 255, 0.08);
                 }
             }
         }
@@ -45,7 +75,7 @@
     position: fixed;
     top: 70px;
 
-    > .moove-container-fluid {
+    >.moove-container-fluid {
         padding: 0;
     }
 
@@ -81,7 +111,8 @@
 
                 &:hover,
                 &:focus {
-                    background-color: darken($brand-primary, 10%);
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: $gt4t-light-green !important;
                 }
             }
         }
@@ -98,19 +129,26 @@ body[data-bs-theme="dark"] {
     }
 
     .primary-navigation .navigation .nav-link {
-        color: $gray-300;
+        color: rgba(255, 255, 255, 0.85) !important;
+
+        &.active {
+            color: $gt4t-light-green !important;
+            border-bottom-color: $gt4t-light-green !important;
+        }
 
         &:hover,
         &:focus {
-            background-color: $gray-700;
+            background-color: rgba(255, 255, 255, 0.08);
+            color: $gt4t-light-green !important;
         }
     }
 
     .secondary-navigation {
         .moremenu .nav-tabs .nav-link {
+
             &:hover,
             &:focus {
-                background-color: $gray-700;
+                background-color: rgba(255, 255, 255, 0.1);
             }
         }
     }
@@ -221,7 +259,7 @@ body[data-bs-theme="dark"] {
 }
 
 .popover-region-mylearning {
-    .all-learning:empty + .empty-message {
+    .all-learning:empty+.empty-message {
         display: block;
     }
 
