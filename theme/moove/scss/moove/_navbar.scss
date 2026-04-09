@@ -6,6 +6,61 @@
     font-weight: inherit;
 }
 
+// ─────────────────────────────────────────────
+// Koyu temada hamburger menü ikonu → beyaz
+// ─────────────────────────────────────────────
+body[data-bs-theme="dark"] {
+    .navbar-toggler {
+        // Bootstrap'ın toggler ikonu dark mode'da beyaz SVG kullanır,
+        // ama bizim navbar zaten dark olduğu için light mode'da da override gerekiyor
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        border-color: rgba(255, 255, 255, 0.3);
+        color: #fff;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+
+// Light modda da hamburger beyaz olsun (koyu yeşil navbar üzerinde)
+body:not([data-bs-theme="dark"]) {
+    .navbar-toggler {
+        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    }
+}
+
+// ─────────────────────────────────────────────
+// Profil avatarındaki baş harfler (ör: "SA")
+// Her iki temada da siyah metin
+// ─────────────────────────────────────────────
+.userinitials {
+    color: #0D0D0D !important;
+}
+
+// Dark modda arka plan biraz daha açık yapılsın ki siyah yazı görünsün
+body[data-bs-theme="dark"] {
+    .userinitials {
+        background-color: $gt4t-light-green !important; // Açık yeşil arka plan
+        color: $gt4t-dark-text !important;              // Siyah yazı
+    }
+}
+
+// Light modda arka plan açık yeşil tonu
+body:not([data-bs-theme="dark"]) {
+    .userinitials {
+        background-color: $gt4t-light-green !important; // Açık yeşil arka plan
+        color: $gt4t-dark-text !important;              // Siyah yazı
+    }
+}
+
+
+
 .navbar.fixed-top {
     border: none;
     height: 70px;
