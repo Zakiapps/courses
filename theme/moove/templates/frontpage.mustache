@@ -159,14 +159,16 @@
         </section>
         {{/gt4t_movement}}
 
-        {{! ═══ MOODLE CONTENT ═══ }}
-        <div id="topofscroll" style="background:#FAFAFA">
-            <div id="page-content" class="d-print-block main-inner" style="padding:2rem 0;background:#FAFAFA">
-                <div id="region-main-box">
-                    <section id="region-main" aria-label="{{#str}}content{{/str}}">
-                        {{{ output.course_content_header }}}
-                        {{{ output.main_content }}}
-                        {{{ output.course_content_footer }}}
+        {{! ═══ MOODLE CONTENT (Available Courses) ═══ }}
+        <div id="topofscroll" style="background:#FAFAFA !important;color:#0D0D0D !important">
+            <div id="page-content" class="d-print-block main-inner" style="padding:2rem 0;background:#FAFAFA !important;color:#0D0D0D !important">
+                <div id="region-main-box" style="background:#FAFAFA !important;color:#0D0D0D !important">
+                    <section id="region-main" aria-label="{{#str}}content{{/str}}" style="background:#FAFAFA !important;color:#0D0D0D !important;padding:1rem 2rem">
+                        <div style="max-width:1200px;margin:0 auto">
+                            {{{ output.course_content_header }}}
+                            {{{ output.main_content }}}
+                            {{{ output.course_content_footer }}}
+                        </div>
                     </section>
                 </div>
             </div>
@@ -174,19 +176,19 @@
 
         {{! FAQ }}
         {{#faqenabled}}
-            <section id="faq" style="padding:4rem 0;background:#FAFAFA">
+            <section id="faq" style="padding:4rem 0;background:#FAFAFA !important;color:#0D0D0D !important">
                 <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
-                    <h2 style="text-align:center;font-family:'Work Sans',sans-serif;font-weight:700;margin-bottom:2rem">{{#str}}faq, theme_moove{{/str}}</h2>
+                    <h2 style="text-align:center;font-family:'Work Sans',sans-serif;font-weight:700;margin-bottom:2rem;color:#053225 !important">{{#str}}faq, theme_moove{{/str}}</h2>
                     <div class="accordion" id="accordion-faq" style="max-width:900px;margin:0 auto">
                         {{#faq}}
-                            <div class="accordion-item mb-1">
+                            <div class="accordion-item mb-1" style="background:#fff !important;border:1px solid #19B35C !important">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button {{^active}}collapsed{{/active}}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{{id}}}" aria-expanded="true" aria-controls="collapse-{{{id}}}">
+                                    <button class="accordion-button {{^active}}collapsed{{/active}}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{{id}}}" aria-expanded="true" aria-controls="collapse-{{{id}}}" style="background:#fff !important;color:#053225 !important;font-family:'Work Sans',sans-serif;font-weight:600">
                                         {{{question}}}
                                     </button>
                                 </h2>
                                 <div id="collapse-{{{id}}}" class="accordion-collapse collapse {{#active}}show{{/active}}" data-bs-parent="#accordion-faq">
-                                    <div class="accordion-body">{{{answer}}}</div>
+                                    <div class="accordion-body" style="background:#fff !important;color:#0D0D0D !important;font-family:'Work Sans',sans-serif">{{{answer}}}</div>
                                 </div>
                             </div>
                         {{/faq}}
