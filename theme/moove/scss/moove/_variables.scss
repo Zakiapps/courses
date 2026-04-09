@@ -1,14 +1,32 @@
-$body-bg: #f2f3f7 !default;
+// ============================================================
+// GreenTech4Transformation (GT4T) Brand Colors
+// Visual Identity: görsel kimlik.pdf
+// ============================================================
 
-$brand-primary: #0f47ad !default;
-$green: #64a44e !default;
-$gold: #f7bf29 !default;
+// Main Colors
+$gt4t-dark-green:   #053225 !default;  // Koyu Yeşil — ana arka plan rengi
+$gt4t-mid-green:    #19B35C !default;  // Orta Yeşil — birincil vurgu
+$gt4t-light-green:  #C1FF72 !default;  // Açık Yeşil — highlight / accent
+
+// Secondary Colors
+$gt4t-cyan:         #00D4D4 !default;  // Turkuaz
+$gt4t-teal:         #006D77 !default;  // Derin Teal
+
+// Neutral Colors
+$gt4t-off-white:    #FAFAFA !default;  // Kırık Beyaz
+$gt4t-dark-text:    #0D0D0D !default;  // Koyu Metin
+
+// Moodle/Bootstrap mappings
+$body-bg: $gt4t-off-white !default;
+$brand-primary: $gt4t-mid-green !default;         // Ana marka rengi → Orta Yeşil
+$green: $gt4t-mid-green !default;
+$gold: $gt4t-light-green !default;                // Highlight/accent → Açık Yeşil
 $background: var(--bs-body-bg) !default;
-$secondary-menu-color: $brand-primary !default;
+$secondary-menu-color: $gt4t-dark-green !default; // İkincil menü → Koyu Yeşil
 
+// Social media colors (unchanged)
 $moodle-color: #f98012 !default;
 $facebook-color: #4167B2 !default;
-$moodle-color: #f98012 !default;
 $twitter-color: #55acee !default;
 $youtube-color: #cc181e !default;
 $linkedin-color: #007bb5 !default;

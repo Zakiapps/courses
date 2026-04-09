@@ -2,22 +2,39 @@
 [data-bs-theme="light"] {
     // Note: Custom variable values only support SassScript inside `#{}`.
 
-    // Colors
-    //
-    // Generate palettes for full colors, grays, and theme colors.
-    --moove-secondary-navigation-bg-color: #{$brand-primary};
-    --moove-navbar-bg-color: #{$white};
-    --moove-bg-white: #{$white};
-    --moove-link-color: #{$brand-primary};
-    --moove-gray-bg: #f8f9fa;
+    // GT4T Brand Color CSS Variables
+    --gt4t-dark-green:   #053225;
+    --gt4t-mid-green:    #19B35C;
+    --gt4t-light-green:  #C1FF72;
+    --gt4t-cyan:         #00D4D4;
+    --gt4t-teal:         #006D77;
+    --gt4t-off-white:    #FAFAFA;
+    --gt4t-dark-text:    #0D0D0D;
+
+    // Gradients
+    --gt4t-gradient-green: linear-gradient(135deg, #053225 0%, #19B35C 60%, #C1FF72 100%);
+    --gt4t-gradient-teal:  linear-gradient(135deg, #053225 0%, #00D4D4 100%);
+
+    // Moove mapped variables
+    --moove-secondary-navigation-bg-color: #{$gt4t-dark-green};
+    --moove-navbar-bg-color: #{$gt4t-dark-green};
+    --moove-bg-white: #{$gt4t-off-white};
+    --moove-link-color: #{$gt4t-mid-green};
+    --moove-gray-bg: #f0f7f4;
+    --moove-primary-color: #{$gt4t-mid-green};
+    --moove-accent-color: #{$gt4t-light-green};
+    --moove-secondary-color: #{$gt4t-cyan};
 }
 
 @if $enable-dark-mode {
     @include color-mode(dark, true) {
-        --moove-secondary-navigation-bg-color: #{$gray-800};
-        --moove-navbar-bg-color: #{$body-bg-dark};
-        --moove-bg-white: #{$gray-800};
-        --moove-link-color: #{$gray-300};
-        --moove-gray-bg: #{$gray-900};
+        --moove-secondary-navigation-bg-color: #{$gt4t-dark-green};
+        --moove-navbar-bg-color: #021a13;
+        --moove-bg-white: #0a2a1e;
+        --moove-link-color: #{$gt4t-light-green};
+        --moove-gray-bg: #041c12;
+        --moove-primary-color: #{$gt4t-mid-green};
+        --moove-accent-color: #{$gt4t-light-green};
+        --moove-secondary-color: #{$gt4t-cyan};
     }
 }
