@@ -199,16 +199,19 @@ class settings {
                     'title' => 'Circular Economy',
                     'description' => 'Turning waste into value through smart design, sustainable materials, and resource-efficient systems that support long-term environmental and economic resilience.',
                     'color' => 'green',
+                    'color_hex' => '#19B35C',
                 ],
                 [
                     'title' => 'Digital Transformation',
                     'description' => "Building intelligent, data-driven solutions \u{2014} from AI to smart systems \u{2014} that enable more connected, efficient, and inclusive industries and services.",
                     'color' => 'cyan',
+                    'color_hex' => '#00D4D4',
                 ],
                 [
                     'title' => 'Clean Energy',
                     'description' => "Accelerating the transition toward renewable, low-emission energy solutions that support Europe\u{2019}s climate goals and energy independence.",
                     'color' => 'teal',
+                    'color_hex' => '#006D77',
                 ],
             ],
         ];
