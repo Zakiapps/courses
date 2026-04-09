@@ -115,24 +115,19 @@ body[data-bs-theme="dark"] {
     --bs-link-hover-color: #C1FF72;
     color: #fff;
 
-    // Navbar görünür elementleri beyaz yap (dropdown hariç — * kullanma!)
+    // Sadece primary navigation linkleri beyaz
     > .navbar-brand,
     > .navbar-nav > li > a,
     > .navbar-nav > li > .nav-link,
     .primary-navigation a,
-    .primary-navigation .nav-link,
-    #usernavigation > *:not(.dropdown) a,
-    #usernavigation > *:not(.dropdown) span,
-    #usernavigation > *:not(.dropdown) button {
+    .primary-navigation .nav-link {
         color: rgba(255, 255, 255, 0.9) !important;
     }
 
-    // Dropdown AÇILMADAN önce butonu beyaz göster
-    // Dropdown açıldıktan sonra içerideki .dropdown-menu kuralları devreye girer
+    // Kullanıcı menüsü toggle butonu (açılmadan önce beyaz görünsün)
+    // Not: dropdown açıldıktan sonra içerideki dropdown-menu kuralları devreye girer
     [data-region="usermenu"] > .nav-link,
-    [data-region="usermenu"] > button,
-    .usermenu > .nav-link,
-    .usermenu > button {
+    [data-region="usermenu"] > button {
         color: rgba(255, 255, 255, 0.9) !important;
     }
 
@@ -418,3 +413,65 @@ body[data-bs-theme="dark"] {
         height: 18px;
     }
 }
+
+// ══════════════════════════════════════════════
+// ÖNEMLİ: Bu kurallar dosyanın EN SONUNDA
+// Cascade'de tüm önceki kuralları geçersiz kılar
+// ══════════════════════════════════════════════
+
+// Profil avatarı baş harfleri — HER ZAMAN beyaz arka plan + siyah yazı
+.navbar .userinitials,
+.usermenu-container .userinitials,
+[data-region="usermenu"] .userinitials,
+.userinitials {
+    background-color: #ffffff !important;
+    color: #0D0D0D !important;
+}
+
+// Dropdown menü itemleri — açık temada siyah, koyu temada açık gri
+body:not([data-bs-theme="dark"]) .dropdown-menu,
+body:not([data-bs-theme="dark"]) .navbar .dropdown-menu {
+    .dropdown-item,
+    a.dropdown-item,
+    button.dropdown-item {
+        color: #0D0D0D !important;
+
+        &:hover, &:focus {
+            color: #053225 !important;
+            background-color: #f0f7f4 !important;
+        }
+
+        &:active, &.active {
+            color: #ffffff !important;
+            background-color: #19B35C !important;
+        }
+    }
+
+    // Bölüm başlıkları (ör: "SA şeklinde giriş yapıldı")
+    .dropdown-header {
+        color: #6c757d !important;
+    }
+}
+
+body[data-bs-theme="dark"] .dropdown-menu,
+body[data-bs-theme="dark"] .navbar .dropdown-menu {
+    .dropdown-item,
+    a.dropdown-item,
+    button.dropdown-item {
+        color: #e0e0e0 !important;
+
+        &:hover, &:focus {
+            color: #C1FF72 !important;
+            background-color: rgba(255, 255, 255, 0.08) !important;
+        }
+
+        &:active, &.active {
+            color: #0D0D0D !important;
+            background-color: #C1FF72 !important;
+        }
+    }
+
+    .dropdown-header {
+        color: rgba(255, 255, 255, 0.5) !important;
+    }
+}
