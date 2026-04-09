@@ -147,8 +147,9 @@
         overflow: hidden;
         background:
             linear-gradient(160deg,
-                rgba(5, 50, 37, 0.92) 0%,
-                rgba(5, 50, 37, 0.75) 40%,
+                rgba(5, 50, 37, 0.95) 0%,
+                rgba(5, 50, 37, 0.8) 35%,
+                rgba(10, 80, 50, 0.7) 60%,
                 rgba(25, 179, 92, 0.5) 100%
             ),
             linear-gradient(to bottom right, $gt4t-dark-green, $gt4t-mid-green);
@@ -159,9 +160,32 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 60% 50%, rgba(25, 179, 92, 0.15) 0%, transparent 70%),
-                radial-gradient(ellipse at 80% 80%, rgba(193, 255, 114, 0.08) 0%, transparent 50%);
+                radial-gradient(ellipse at 55% 40%, rgba(25, 179, 92, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(193, 255, 114, 0.06) 0%, transparent 50%);
             pointer-events: none;
+        }
+
+        &__leaf {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-30%);
+            width: 50%;
+            max-width: 550px;
+            height: 85%;
+            pointer-events: none;
+            z-index: 1;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 2rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 0 40px rgba(25, 179, 92, 0.3));
+            }
         }
 
         &__content {
@@ -194,15 +218,30 @@
 
         &__scroll {
             position: absolute;
-            bottom: 2rem;
+            bottom: 5rem;
             left: 50%;
             transform: translateX(-50%);
             cursor: pointer;
             animation: gt4t-bounce 2s infinite;
-            z-index: 2;
+            z-index: 3;
             opacity: 0.7;
             transition: opacity 0.3s;
             &:hover { opacity: 1; }
+        }
+
+        &__wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+            line-height: 0;
+
+            svg {
+                width: 100%;
+                height: 160px;
+                display: block;
+            }
         }
     }
 
@@ -215,7 +254,7 @@
     // SECTION 2: TRANSFORMING HIGHER EDUCATION
     // ────────────────────────────────────────────────────────
     .gt4t-education {
-        background: linear-gradient(135deg, $gt4t-light-green 0%, #a8f05e 50%, $gt4t-light-green 100%);
+        background: linear-gradient(180deg, $gt4t-light-green 0%, #d4ff8e 40%, #e8ffbe 100%);
         padding: 5rem 0;
         color: $gt4t-dark-text;
 
@@ -244,25 +283,53 @@
 
         &__card {
             flex: 1;
-            max-width: 280px;
+            max-width: 300px;
             perspective: 600px;
+
+            &:nth-child(1) .gt4t-stats__card-inner {
+                background:
+                    linear-gradient(135deg, rgba(5, 50, 37, 0.75) 0%, rgba(25, 80, 50, 0.6) 100%),
+                    linear-gradient(to bottom right, #2d6a4f, #1b4332);
+            }
+            &:nth-child(2) .gt4t-stats__card-inner {
+                background:
+                    linear-gradient(135deg, rgba(10, 60, 40, 0.7) 0%, rgba(40, 100, 60, 0.55) 100%),
+                    linear-gradient(to bottom right, #40916c, #2d6a4f);
+            }
+            &:nth-child(3) .gt4t-stats__card-inner {
+                background:
+                    linear-gradient(135deg, rgba(5, 50, 37, 0.7) 0%, rgba(30, 90, 55, 0.55) 100%),
+                    linear-gradient(to bottom right, #52b788, #2d6a4f);
+            }
         }
 
         &__card-inner {
-            background: linear-gradient(135deg, rgba(5, 50, 37, 0.85) 0%, rgba(5, 50, 37, 0.7) 100%);
             color: #fff;
             padding: 2.5rem 1.5rem;
-            border-radius: 8px;
-            transform: skewX(-3deg);
+            border-radius: 12px;
+            transform: skewX(-4deg);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            min-height: 180px;
+            min-height: 220px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background:
+                    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 50%),
+                    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 40%);
+                pointer-events: none;
+            }
 
             &:hover {
-                transform: skewX(-3deg) translateY(-4px);
-                box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+                transform: skewX(-4deg) translateY(-4px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.25);
             }
         }
 
@@ -272,7 +339,9 @@
             font-size: 2.5rem;
             display: block;
             margin-bottom: 0.75rem;
-            color: $gt4t-light-green;
+            color: #fff;
+            transform: skewX(4deg);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         &__label {
@@ -280,7 +349,8 @@
             font-weight: 600;
             font-size: 0.95rem;
             line-height: 1.4;
-            transform: skewX(3deg);
+            transform: skewX(4deg);
+            text-shadow: 0 1px 4px rgba(0,0,0,0.2);
         }
     }
 
@@ -346,8 +416,8 @@
     // SECTION 4: POWERED BY EUROPE'S INNOVATORS
     // ────────────────────────────────────────────────────────
     .gt4t-innovators {
-        background-color: $gt4t-dark-green;
-        color: #fff;
+        background-color: $gt4t-cyan;
+        color: $gt4t-dark-text;
         padding: 5rem 0;
         position: relative;
         overflow: hidden;
@@ -363,14 +433,14 @@
             font-family: $gt4t-font-primary;
             font-weight: 700;
             font-size: clamp(1.5rem, 3vw, 2.2rem);
-            color: #fff;
+            color: $gt4t-dark-green;
             margin-bottom: 1.5rem;
         }
 
         &__text p {
             font-size: 1rem;
             line-height: 1.7;
-            color: rgba(255, 255, 255, 0.85);
+            color: $gt4t-dark-text;
             margin-bottom: 1rem;
         }
 
@@ -403,21 +473,21 @@
             z-index: 0;
 
             &--1 {
-                width: 500px;
-                height: 500px;
+                width: 450px;
+                height: 450px;
                 background: $gt4t-mid-green;
-                left: -100px;
-                bottom: -150px;
-                opacity: 0.7;
+                left: -80px;
+                bottom: -120px;
+                opacity: 0.75;
             }
 
             &--2 {
-                width: 300px;
-                height: 300px;
+                width: 280px;
+                height: 280px;
                 background: $gt4t-light-green;
-                left: 100px;
-                bottom: -50px;
-                opacity: 0.5;
+                left: 120px;
+                bottom: -30px;
+                opacity: 0.55;
             }
         }
 
@@ -442,15 +512,24 @@
             border-radius: 50%;
             border: 8px solid $gt4t-light-green;
             background:
-                linear-gradient(135deg, $gt4t-dark-green 0%, $gt4t-teal 100%);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+                linear-gradient(160deg, #1a1a3e 0%, #0d2b4a 40%, $gt4t-teal 100%);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: radial-gradient(circle at 40% 60%, rgba(0, 150, 255, 0.15) 0%, transparent 50%);
+            }
         }
 
         &__heading {
             font-family: $gt4t-font-primary;
             font-weight: 700;
             font-size: clamp(1.5rem, 3vw, 2rem);
-            color: $gt4t-dark-text;
+            color: $gt4t-dark-green;
             margin-bottom: 1rem;
         }
 
@@ -473,12 +552,80 @@
             text-align: center;
         }
 
+        &__rocket-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
         &__rocket {
-            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
             img {
-                width: 160px;
+                width: 140px;
                 height: auto;
                 filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+            }
+        }
+
+        &__clouds {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 400px;
+            height: 200px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        &__cloud {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(200, 200, 200, 0.4) 0%, rgba(220, 220, 220, 0.1) 70%, transparent 100%);
+
+            &--1 {
+                width: 200px;
+                height: 80px;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 40px;
+                background: radial-gradient(ellipse, rgba(190, 190, 190, 0.35) 0%, transparent 70%);
+            }
+            &--2 {
+                width: 120px;
+                height: 60px;
+                bottom: 40px;
+                left: 30%;
+                border-radius: 30px;
+                background: radial-gradient(ellipse, rgba(200, 200, 200, 0.3) 0%, transparent 70%);
+            }
+            &--3 {
+                width: 140px;
+                height: 70px;
+                bottom: 35px;
+                right: 25%;
+                border-radius: 35px;
+                background: radial-gradient(ellipse, rgba(195, 195, 195, 0.3) 0%, transparent 70%);
+            }
+            &--4 {
+                width: 260px;
+                height: 100px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 50px;
+                background: radial-gradient(ellipse, rgba(210, 210, 210, 0.3) 0%, transparent 65%);
+            }
+            &--5 {
+                width: 320px;
+                height: 120px;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-radius: 60px;
+                background: radial-gradient(ellipse, rgba(220, 220, 220, 0.25) 0%, transparent 60%);
             }
         }
 
@@ -486,7 +633,7 @@
             font-family: $gt4t-font-primary;
             font-weight: 700;
             font-size: clamp(1.5rem, 3vw, 2.2rem);
-            color: $gt4t-dark-text;
+            color: $gt4t-dark-green;
             margin-bottom: 0.75rem;
         }
 
@@ -595,6 +742,16 @@
             padding: 0 1rem;
         }
 
+        .gt4t-hero__leaf {
+            opacity: 0.3;
+            width: 80%;
+            left: 40%;
+        }
+
+        .gt4t-hero__wave svg {
+            height: 100px;
+        }
+
         .gt4t-stats {
             flex-direction: column;
             align-items: center;
@@ -609,6 +766,7 @@
             transform: none;
         }
 
+        .gt4t-stats__number,
         .gt4t-stats__label {
             transform: none;
         }
@@ -619,6 +777,10 @@
 
         .gt4t-container {
             padding: 0 1.5rem;
+        }
+
+        .gt4t-movement__clouds {
+            width: 280px;
         }
 
         .footer-content-popover .footer-section {
@@ -642,6 +804,14 @@
             text-align: center;
         }
 
+        .gt4t-hero__leaf {
+            display: none;
+        }
+
+        .gt4t-hero__wave svg {
+            height: 60px;
+        }
+
         .gt4t-education,
         .gt4t-domains,
         .gt4t-change,
@@ -656,6 +826,10 @@
         .gt4t-change__image-frame {
             width: 200px;
             height: 200px;
+        }
+
+        .gt4t-movement__clouds {
+            display: none;
         }
     }
 }

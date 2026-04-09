@@ -207,6 +207,22 @@
         margin-bottom: 1.5rem;
     }
 
+    &__partner-logos {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    &__partner-logo {
+        height: 36px;
+        width: auto;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+        &:hover { opacity: 1; }
+    }
+
     &__moodle-info {
         font-size: 0.85rem;
         color: rgba(255, 255, 255, 0.5);

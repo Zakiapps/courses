@@ -68,6 +68,9 @@
         {{#gt4t_hero}}
         <section class="gt4t-hero">
             <div class="gt4t-hero__overlay"></div>
+            <div class="gt4t-hero__leaf">
+                <img src="{{wwwroot}}/theme/moove/pix/gt4t_hero_leaf.svg" alt="" aria-hidden="true">
+            </div>
             <div class="gt4t-hero__content">
                 <h1 class="gt4t-hero__heading">{{{heading}}}</h1>
                 <p class="gt4t-hero__subtitle">{{{subtitle}}}</p>
@@ -76,6 +79,13 @@
             <div class="gt4t-hero__scroll">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+            <div class="gt4t-hero__wave">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,200 L0,120 Q120,20 300,80 Q500,150 720,60 Q900,-10 1080,50 Q1260,110 1440,40 L1440,200 Z" fill="#19B35C" opacity="0.6"/>
+                    <path d="M0,200 L0,140 Q200,60 400,100 Q600,160 800,80 Q1000,10 1200,70 Q1350,110 1440,80 L1440,200 Z" fill="#C1FF72" opacity="0.8"/>
+                    <path d="M0,200 L0,160 Q150,110 350,140 Q550,180 750,120 Q950,60 1150,100 Q1300,130 1440,100 L1440,200 Z" fill="#C1FF72"/>
                 </svg>
             </div>
         </section>
@@ -138,10 +148,10 @@
                         <h2 class="gt4t-innovators__heading">{{{heading}}}</h2>
                         <p>{{{text1}}}</p>
                         <p>{{{text2}}}</p>
-                        <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--dark">{{{cta_text}}}</a>
+                        <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--primary">{{{cta_text}}}</a>
                     </div>
                     <div class="gt4t-innovators__map">
-                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_europe_map.svg" alt="" aria-hidden="true">
+                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_europe_map.svg" alt="European innovation network" aria-hidden="true">
                     </div>
                 </div>
             </div>
@@ -176,8 +186,17 @@
         {{#gt4t_movement}}
         <section class="gt4t-movement">
             <div class="gt4t-container gt4t-movement__inner">
-                <div class="gt4t-movement__rocket">
-                    <img src="{{wwwroot}}/theme/moove/pix/gt4t_rocket.svg" alt="" aria-hidden="true">
+                <div class="gt4t-movement__rocket-wrapper">
+                    <div class="gt4t-movement__clouds">
+                        <div class="gt4t-movement__cloud gt4t-movement__cloud--1"></div>
+                        <div class="gt4t-movement__cloud gt4t-movement__cloud--2"></div>
+                        <div class="gt4t-movement__cloud gt4t-movement__cloud--3"></div>
+                        <div class="gt4t-movement__cloud gt4t-movement__cloud--4"></div>
+                        <div class="gt4t-movement__cloud gt4t-movement__cloud--5"></div>
+                    </div>
+                    <div class="gt4t-movement__rocket">
+                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_rocket.svg" alt="" aria-hidden="true">
+                    </div>
                 </div>
                 <h2 class="gt4t-movement__heading">{{{heading}}}</h2>
                 <p class="gt4t-movement__subtitle">{{{subtitle}}}</p>

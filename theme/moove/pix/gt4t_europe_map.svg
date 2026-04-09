@@ -1,60 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400" opacity="0.15">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none">
   <defs>
-    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
-      <circle cx="3" cy="3" r="1.5" fill="#C1FF72"/>
+    <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="6" stroke="#053225" stroke-width="1.5" opacity="0.7"/>
     </pattern>
+    <clipPath id="europe">
+      <path d="M280 30 Q320 25 340 35 Q350 40 360 38 Q375 32 390 40 Q400 50 395 65 Q388 80 395 95 Q410 100 420 110 Q430 125 425 140 Q420 150 430 160 Q445 170 450 185 Q455 200 445 215 Q435 225 440 240 Q450 255 445 270 Q440 280 450 295 Q460 310 455 325 Q448 340 435 345 Q420 350 410 360 Q400 375 385 380 Q370 385 355 375 Q340 365 325 370 Q310 378 295 380 Q280 382 265 375 Q250 368 240 380 Q230 392 215 395 Q200 398 185 390 Q170 382 165 370 Q162 358 150 350 Q135 342 130 330 Q125 318 115 310 Q105 300 100 288 Q95 275 100 260 Q108 245 105 230 Q100 215 110 200 Q120 185 118 170 Q115 155 125 140 Q138 128 140 115 Q142 100 155 90 Q170 80 180 65 Q188 52 200 45 Q215 38 230 40 Q248 42 260 35 Q270 28 280 30Z"/>
+    </clipPath>
   </defs>
-  <!-- Simplified Europe silhouette made of dots/circles -->
-  <g fill="#C1FF72">
-    <!-- Scandinavia -->
-    <circle cx="250" cy="60" r="4"/><circle cx="260" cy="50" r="4"/>
-    <circle cx="255" cy="75" r="4"/><circle cx="245" cy="90" r="4"/>
-    <circle cx="270" cy="65" r="4"/><circle cx="265" cy="80" r="4"/>
-    <circle cx="240" cy="70" r="4"/><circle cx="275" cy="55" r="4"/>
-    <!-- UK/Ireland -->
-    <circle cx="180" cy="120" r="4"/><circle cx="175" cy="135" r="4"/>
-    <circle cx="190" cy="130" r="4"/><circle cx="185" cy="145" r="4"/>
-    <circle cx="165" cy="125" r="4"/>
-    <!-- Western Europe -->
-    <circle cx="210" cy="160" r="4"/><circle cx="220" cy="155" r="4"/>
-    <circle cx="200" cy="170" r="4"/><circle cx="215" cy="175" r="4"/>
-    <circle cx="195" cy="185" r="4"/><circle cx="205" cy="195" r="4"/>
-    <circle cx="210" cy="210" r="4"/><circle cx="220" cy="200" r="4"/>
-    <!-- Central Europe -->
-    <circle cx="240" cy="150" r="4"/><circle cx="255" cy="145" r="4"/>
-    <circle cx="250" cy="160" r="4"/><circle cx="265" cy="155" r="4"/>
-    <circle cx="245" cy="175" r="4"/><circle cx="260" cy="170" r="4"/>
-    <circle cx="275" cy="165" r="4"/><circle cx="270" cy="180" r="4"/>
-    <!-- Eastern Europe -->
-    <circle cx="290" cy="140" r="4"/><circle cx="300" cy="135" r="4"/>
-    <circle cx="295" cy="155" r="4"/><circle cx="310" cy="145" r="4"/>
-    <circle cx="305" cy="160" r="4"/><circle cx="315" cy="155" r="4"/>
-    <circle cx="300" cy="175" r="4"/><circle cx="320" cy="165" r="4"/>
-    <!-- Southern/Mediterranean -->
-    <circle cx="230" cy="220" r="4"/><circle cx="245" cy="230" r="4"/>
-    <circle cx="255" cy="225" r="4"/><circle cx="240" cy="240" r="4"/>
-    <circle cx="260" cy="240" r="4"/><circle cx="275" cy="235" r="4"/>
-    <circle cx="250" cy="255" r="4"/><circle cx="265" cy="250" r="4"/>
-    <!-- Turkey -->
-    <circle cx="320" cy="210" r="4"/><circle cx="335" cy="205" r="4"/>
-    <circle cx="350" cy="200" r="4"/><circle cx="340" cy="215" r="4"/>
-    <circle cx="355" cy="210" r="4"/><circle cx="365" cy="205" r="4"/>
-    <!-- Iberia -->
-    <circle cx="175" cy="220" r="4"/><circle cx="185" cy="215" r="4"/>
-    <circle cx="180" cy="235" r="4"/><circle cx="190" cy="230" r="4"/>
-    <circle cx="170" cy="240" r="4"/><circle cx="195" cy="245" r="4"/>
-    <!-- Balkans -->
-    <circle cx="285" cy="200" r="4"/><circle cx="295" cy="210" r="4"/>
-    <circle cx="280" cy="215" r="4"/><circle cx="290" cy="225" r="4"/>
-    <!-- Finland highlight -->
-    <circle cx="290" cy="70" r="6" fill="#00D4D4"/>
-    <!-- Germany highlight -->
-    <circle cx="240" cy="155" r="6" fill="#00D4D4"/>
-    <!-- Ireland highlight -->
-    <circle cx="170" cy="130" r="6" fill="#00D4D4"/>
-    <!-- Turkey highlight -->
-    <circle cx="350" cy="205" r="6" fill="#00D4D4"/>
-    <!-- Netherlands highlight -->
-    <circle cx="220" cy="140" r="6" fill="#00D4D4"/>
+  <!-- Hatched Europe shape -->
+  <g clip-path="url(#europe)">
+    <rect width="600" height="500" fill="url(#hatch)"/>
   </g>
+  <!-- Europe outline -->
+  <path d="M280 30 Q320 25 340 35 Q350 40 360 38 Q375 32 390 40 Q400 50 395 65 Q388 80 395 95 Q410 100 420 110 Q430 125 425 140 Q420 150 430 160 Q445 170 450 185 Q455 200 445 215 Q435 225 440 240 Q450 255 445 270 Q440 280 450 295 Q460 310 455 325 Q448 340 435 345 Q420 350 410 360 Q400 375 385 380 Q370 385 355 375 Q340 365 325 370 Q310 378 295 380 Q280 382 265 375 Q250 368 240 380 Q230 392 215 395 Q200 398 185 390 Q170 382 165 370 Q162 358 150 350 Q135 342 130 330 Q125 318 115 310 Q105 300 100 288 Q95 275 100 260 Q108 245 105 230 Q100 215 110 200 Q120 185 118 170 Q115 155 125 140 Q138 128 140 115 Q142 100 155 90 Q170 80 180 65 Q188 52 200 45 Q215 38 230 40 Q248 42 260 35 Q270 28 280 30Z" stroke="#053225" stroke-width="1.5" fill="none" opacity="0.5"/>
+  <!-- Scandinavia appendage -->
+  <g clip-path="url(#europe)">
+    <path d="M290 20 Q300 10 320 15 Q335 20 340 30" stroke="url(#hatch)" stroke-width="15" fill="none"/>
+  </g>
+  <!-- Green dots representing innovation hubs -->
+  <circle cx="280" cy="180" r="12" fill="#C1FF72" opacity="0.9"/>
+  <circle cx="340" cy="240" r="8" fill="#C1FF72" opacity="0.8"/>
+  <circle cx="200" cy="250" r="10" fill="#C1FF72" opacity="0.85"/>
+  <circle cx="380" cy="310" r="14" fill="#C1FF72" opacity="0.9"/>
+  <circle cx="320" cy="340" r="10" fill="#C1FF72" opacity="0.75"/>
+  <circle cx="160" cy="310" r="7" fill="#C1FF72" opacity="0.7"/>
+  <circle cx="250" cy="300" r="9" fill="#C1FF72" opacity="0.8"/>
+  <!-- Larger decorative circle -->
+  <circle cx="360" cy="350" r="20" fill="#C1FF72" opacity="0.4"/>
+  <!-- Turkey region -->
+  <path d="M420 280 Q450 270 480 275 Q500 280 510 290 Q515 300 505 310 Q490 318 470 315 Q450 310 435 305 Q425 298 420 280Z" fill="url(#hatch)" stroke="#053225" stroke-width="1" opacity="0.6"/>
+  <circle cx="470" cy="290" r="6" fill="#C1FF72" opacity="0.7"/>
 </svg>

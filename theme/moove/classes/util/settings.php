@@ -130,6 +130,7 @@ class settings {
             'description' => 'A Europe-wide initiative empowering universities and innovators to lead the green and digital transition.',
             'disclaimer' => 'GT4T is supported by the EIT HEI Initiative, and guided and co-funded by EIT Climate-KIC.',
             'copyright' => "\u{00a9} Green Tech for Transformation " . date('Y'),
+            'wwwroot' => $CFG->wwwroot,
         ];
 
         return $templatecontext;
