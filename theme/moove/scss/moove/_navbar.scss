@@ -7,28 +7,13 @@
 }
 
 // ─────────────────────────────────────────────
-// Koyu temada hamburger menü ikonu → beyaz
+// Hamburger menü ikonu → her iki temada beyaz
+// (navbar zaten koyu yeşil, ikon beyaz olmalı)
 // ─────────────────────────────────────────────
-body[data-bs-theme="dark"] {
-    .navbar-toggler {
-        // Bootstrap'ın toggler ikonu dark mode'da beyaz SVG kullanır,
-        // ama bizim navbar zaten dark olduğu için light mode'da da override gerekiyor
-        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        border-color: rgba(255, 255, 255, 0.3);
-        color: #fff;
-    }
-
-    .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-    }
-}
-
-// Light modda da hamburger beyaz olsun (koyu yeşil navbar üzerinde)
-body:not([data-bs-theme="dark"]) {
-    .navbar-toggler {
-        --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        border-color: rgba(255, 255, 255, 0.3);
-    }
+.navbar-toggler {
+    --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff !important;
 
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
@@ -36,29 +21,80 @@ body:not([data-bs-theme="dark"]) {
 }
 
 // ─────────────────────────────────────────────
-// Profil avatarındaki baş harfler (ör: "SA")
-// Her iki temada da siyah metin
+// Profil avatarı baş harfleri (ör: "SA")
+// Beyaz arka plan + siyah yazı (her iki tema)
 // ─────────────────────────────────────────────
 .userinitials {
+    background-color: #fff !important;
     color: #0D0D0D !important;
 }
 
-// Dark modda arka plan biraz daha açık yapılsın ki siyah yazı görünsün
-body[data-bs-theme="dark"] {
-    .userinitials {
-        background-color: $gt4t-light-green !important; // Açık yeşil arka plan
-        color: $gt4t-dark-text !important;              // Siyah yazı
-    }
-}
-
-// Light modda arka plan açık yeşil tonu
+// ─────────────────────────────────────────────
+// Dropdown menü item renkleri
+// Açık temada: koyu metin
+// Karanlık temada: açık metin
+// ─────────────────────────────────────────────
 body:not([data-bs-theme="dark"]) {
-    .userinitials {
-        background-color: $gt4t-light-green !important; // Açık yeşil arka plan
-        color: $gt4t-dark-text !important;              // Siyah yazı
+    .dropdown-menu {
+        --bs-dropdown-color: #0D0D0D;
+        --bs-dropdown-link-color: #0D0D0D;
+        --bs-dropdown-link-hover-color: #053225;
+        --bs-dropdown-link-hover-bg: #f0f7f4;
+        --bs-dropdown-link-active-color: #fff;
+        --bs-dropdown-link-active-bg: #19B35C;
+
+        color: #0D0D0D;
+
+        .dropdown-item {
+            color: #0D0D0D !important;
+
+            &:hover,
+            &:focus {
+                color: #053225 !important;
+                background-color: #f0f7f4 !important;
+            }
+
+            &:active,
+            &.active {
+                color: #fff !important;
+                background-color: #19B35C !important;
+            }
+        }
+
+        .dropdown-divider {
+            border-color: #dee2e6;
+        }
     }
 }
 
+body[data-bs-theme="dark"] {
+    .dropdown-menu {
+        --bs-dropdown-color: #e0e0e0;
+        --bs-dropdown-link-color: #e0e0e0;
+        --bs-dropdown-link-hover-color: #C1FF72;
+        --bs-dropdown-link-hover-bg: rgba(255,255,255,0.08);
+        --bs-dropdown-link-active-color: #0D0D0D;
+        --bs-dropdown-link-active-bg: #C1FF72;
+
+        color: #e0e0e0;
+
+        .dropdown-item {
+            color: #e0e0e0 !important;
+
+            &:hover,
+            &:focus {
+                color: #C1FF72 !important;
+                background-color: rgba(255,255,255,0.08) !important;
+            }
+
+            &:active,
+            &.active {
+                color: #0D0D0D !important;
+                background-color: #C1FF72 !important;
+            }
+        }
+    }
+}
 
 
 .navbar.fixed-top {
@@ -79,14 +115,24 @@ body:not([data-bs-theme="dark"]) {
     --bs-link-hover-color: #C1FF72;
     color: #fff;
 
-    // Tüm navbar alt elementleri beyaz
-    *,
-    a,
-    button,
-    span,
-    .nav-link,
-    .navbar-brand,
-    .navbar-nav .nav-link {
+    // Navbar görünür elementleri beyaz yap (dropdown hariç — * kullanma!)
+    > .navbar-brand,
+    > .navbar-nav > li > a,
+    > .navbar-nav > li > .nav-link,
+    .primary-navigation a,
+    .primary-navigation .nav-link,
+    #usernavigation > *:not(.dropdown) a,
+    #usernavigation > *:not(.dropdown) span,
+    #usernavigation > *:not(.dropdown) button {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+
+    // Dropdown AÇILMADAN önce butonu beyaz göster
+    // Dropdown açıldıktan sonra içerideki .dropdown-menu kuralları devreye girer
+    [data-region="usermenu"] > .nav-link,
+    [data-region="usermenu"] > button,
+    .usermenu > .nav-link,
+    .usermenu > button {
         color: rgba(255, 255, 255, 0.9) !important;
     }
 
