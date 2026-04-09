@@ -11,26 +11,38 @@
     height: 70px;
     background-color: var(--moove-navbar-bg-color);
 
-    // Navbar üzerindeki tüm metinler ve ikonlar beyaz olsun
+    // Bootstrap 5 CSS değişkenlerini doğrudan override et
+    // Bunlar olmadan Bootstrap --bs-navbar-color: black olarak kalır
+    --bs-navbar-color: rgba(255, 255, 255, 0.85);
+    --bs-navbar-hover-color: #C1FF72;
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-brand-color: #fff;
+    --bs-navbar-brand-hover-color: #C1FF72;
+    --bs-nav-link-color: rgba(255, 255, 255, 0.85);
+    --bs-nav-link-hover-color: #C1FF72;
+    --bs-link-color: rgba(255, 255, 255, 0.85);
+    --bs-link-hover-color: #C1FF72;
     color: #fff;
 
-    // Kullanıcı adı, saat, diğer metin elementleri
-    .navbar-nav,
-    .usermenu,
-    .usermenu .nav-link,
-    [data-region="usermenu"],
-    .usertext,
-    .userbutton,
-    .usernamewithavatar {
-        color: #fff !important;
+    // Tüm navbar alt elementleri beyaz
+    *,
+    a,
+    button,
+    span,
+    .nav-link,
+    .navbar-brand,
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
     }
 
-    // İkonlar (arama, bildirim vb.)
+    // İkonlar (FA ve Moodle SVG iconları)
     .icon,
     .fa,
     i[class*="fa-"],
-    .popover-region-toggle .icon {
+    .popover-region-toggle .icon,
+    img.icon {
         color: rgba(255, 255, 255, 0.9) !important;
+        filter: brightness(10) !important;
     }
 
     .primary-navigation {
