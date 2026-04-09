@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <linearGradient id="lf1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C1FF72"/>
+      <stop offset="100%" stop-color="#19B35C"/>
+    </linearGradient>
+    <linearGradient id="lf2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#19B35C"/>
+      <stop offset="100%" stop-color="#006D77"/>
+    </linearGradient>
+    <linearGradient id="lf3" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4D4"/>
+      <stop offset="100%" stop-color="#19B35C"/>
+    </linearGradient>
+    <linearGradient id="lf4" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#C1FF72"/>
+      <stop offset="100%" stop-color="#00D4D4"/>
+    </linearGradient>
+    <linearGradient id="stm" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#19B35C"/>
+      <stop offset="100%" stop-color="#053225"/>
+    </linearGradient>
+    <filter id="gl">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+    <filter id="ds">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#053225" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#ds)" transform="translate(250,230)">
+    <!-- Top-left leaf -->
+    <path d="M-10,-10 Q-60,-30 -100,-90 Q-130,-150 -90,-180 Q-50,-200 -10,-160 Q10,-130 0,-60Z" fill="url(#lf1)" opacity="0.95"/>
+    <path d="M-10,-10 Q-30,-60 -60,-110 Q-80,-140 -70,-160" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+    <!-- Top-right leaf -->
+    <path d="M10,-10 Q60,-30 100,-90 Q130,-150 90,-180 Q50,-200 10,-160 Q-10,-130 0,-60Z" fill="url(#lf2)" opacity="0.92"/>
+    <path d="M10,-10 Q30,-60 60,-110 Q80,-140 70,-160" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+    <!-- Bottom-left leaf -->
+    <path d="M-10,10 Q-60,30 -100,90 Q-130,150 -90,180 Q-50,200 -10,160 Q10,130 0,60Z" fill="url(#lf3)" opacity="0.9"/>
+    <path d="M-10,10 Q-30,60 -60,110 Q-80,140 -70,160" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+    <!-- Bottom-right leaf -->
+    <path d="M10,10 Q60,30 100,90 Q130,150 90,180 Q50,200 10,160 Q-10,130 0,60Z" fill="url(#lf4)" opacity="0.88"/>
+    <path d="M10,10 Q30,60 60,110 Q80,140 70,160" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+    <!-- Center hub -->
+    <circle cx="0" cy="0" r="18" fill="#053225" opacity="0.9"/>
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#C1FF72" stroke-width="1.5" opacity="0.6"/>
+    <!-- Stem -->
+    <path d="M0,18 Q5,80 -5,140 Q-10,180 0,220" stroke="url(#stm)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M0,140 Q-25,120 -45,90" stroke="url(#stm)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- Circuit nodes -->
+  <g opacity="0.4">
+    <circle cx="210" cy="140" r="3" fill="#C1FF72"/>
+    <circle cx="310" cy="120" r="2.5" fill="#C1FF72"/>
+    <circle cx="170" cy="280" r="2" fill="#fff"/>
+    <circle cx="340" cy="300" r="2.5" fill="#C1FF72"/>
+    <circle cx="280" cy="100" r="2" fill="#fff"/>
+    <line x1="210" y1="140" x2="250" y2="180" stroke="#C1FF72" stroke-width="0.8"/>
+    <line x1="310" y1="120" x2="270" y2="170" stroke="#C1FF72" stroke-width="0.8"/>
+    <line x1="340" y1="300" x2="290" y2="310" stroke="#C1FF72" stroke-width="0.8"/>
+  </g>
+  <!-- Sparkles -->
+  <circle cx="155" cy="180" r="4" fill="rgba(193,255,114,0.5)" filter="url(#gl)"/>
+  <circle cx="355" cy="200" r="3.5" fill="rgba(0,212,212,0.5)" filter="url(#gl)"/>
+  <circle cx="250" cy="90" r="3" fill="rgba(255,255,255,0.4)" filter="url(#gl)"/>
+  <!-- "4" accent in center -->
+  <text x="250" y="237" text-anchor="middle" font-family="Orbitron,sans-serif" font-weight="700" font-size="16" fill="#C1FF72" opacity="0.8">4</text>
+</svg>

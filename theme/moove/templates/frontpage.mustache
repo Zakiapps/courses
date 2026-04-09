@@ -39,10 +39,15 @@
         {{#gt4t_hero}}
         <section style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;overflow:hidden;background:linear-gradient(160deg,rgba(5,50,37,.95) 0%,rgba(5,50,37,.8) 35%,rgba(10,80,50,.7) 60%,rgba(25,179,92,.5) 100%),linear-gradient(to bottom right,#053225,#19B35C)">
             <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(25,179,92,.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(193,255,114,.06) 0%,transparent 50%);pointer-events:none"></div>
-            <div style="position:relative;z-index:2;max-width:800px;padding:0 2rem;margin-left:10%">
-                <h1 style="font-family:'Work Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;color:#fff;margin-bottom:1.5rem;letter-spacing:-.02em">{{{heading}}}</h1>
-                <p style="font-family:'Work Sans',sans-serif;font-weight:400;font-size:clamp(1rem,1.5vw,1.25rem);line-height:1.6;color:rgba(255,255,255,.9);margin-bottom:2rem;max-width:650px">{{{subtitle}}}</p>
-                <a href="{{{cta_url}}}" style="display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;border:none;background:#19B35C;color:#fff">{{{cta_text}}}</a>
+            <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:300px;max-width:650px">
+                    <h1 style="font-family:'Work Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;color:#fff;margin-bottom:1.5rem;letter-spacing:-.02em">{{{heading}}}</h1>
+                    <p style="font-family:'Work Sans',sans-serif;font-weight:400;font-size:clamp(1rem,1.5vw,1.25rem);line-height:1.6;color:rgba(255,255,255,.9);margin-bottom:2rem;max-width:550px">{{{subtitle}}}</p>
+                    <a href="{{{cta_url}}}" style="display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;border:none;background:#19B35C;color:#fff">{{{cta_text}}}</a>
+                </div>
+                <div class="gt4t-hero-img-wrap" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center">
+                    <img src="{{wwwroot}}/theme/moove/pix/gt4t_hero_clover.svg" alt="GT4T" style="width:clamp(200px,22vw,340px);height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,.2));animation:gt4tFloat 6s ease-in-out infinite">
+                </div>
             </div>
             <div style="position:absolute;bottom:5rem;left:50%;transform:translateX(-50%);cursor:pointer;z-index:3;opacity:.7" class="gt4t-hero__scroll">
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
@@ -126,7 +131,9 @@
             <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1">
                     <div style="display:flex;justify-content:center;align-items:center">
-                        <div style="width:320px;height:320px;border-radius:50%;border:8px solid #C1FF72;background:linear-gradient(160deg,#1a1a3e 0%,#0d2b4a 40%,#006D77 100%);box-shadow:0 8px 30px rgba(0,0,0,.25)"></div>
+                        <div style="width:320px;height:320px;border-radius:50%;border:8px solid #C1FF72;background:linear-gradient(160deg,#1a1a3e 0%,#0d2b4a 40%,#006D77 100%);box-shadow:0 8px 30px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;overflow:hidden">
+                            <img src="{{wwwroot}}/theme/moove/pix/gt4t_change_globe.svg" alt="Global collaboration" style="width:85%;height:85%;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))">
+                        </div>
                     </div>
                     <div>
                         <h2 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:#053225;margin-bottom:1rem">{{{heading}}}</h2>
@@ -224,6 +231,8 @@
 
         var gt4tCSS = document.createElement('style');
         gt4tCSS.textContent = ''
+            + '@keyframes gt4tFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }'
+            + '@media (max-width: 768px) { .gt4t-hero-img-wrap { display: none !important; } }'
             + '#topofscroll { background: #FAFAFA !important; color: #0D0D0D !important; overflow: hidden !important; }'
             + '#topofscroll #page-content { background: #FAFAFA !important; color: #0D0D0D !important; padding: 3rem 0 !important; margin: 0 !important; }'
             + '#topofscroll #region-main-box { background: #FAFAFA !important; color: #0D0D0D !important; margin: 0 !important; padding: 0 !important; }'
