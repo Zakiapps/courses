@@ -679,6 +679,21 @@
             font-weight: 700;
         }
 
+        #frontpage-available-course-list .courses,
+        .frontpage-course-list-all .courses,
+        .course-search-result {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 1.5rem !important;
+            max-width: 1200px !important;
+            margin: 0 auto !important;
+            padding: 0 1rem !important;
+
+            @include media-breakpoint-down(md) {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
         .coursebox,
         .card,
         .course-info-container {
@@ -689,6 +704,9 @@
             box-shadow: 0 2px 12px rgba($gt4t-mid-green, .10) !important;
             border-left: 4px solid $gt4t-mid-green !important;
             transition: box-shadow .2s, transform .2s;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
 
             &:hover {
                 box-shadow: 0 4px 20px rgba($gt4t-mid-green, .18) !important;
@@ -696,7 +714,7 @@
             }
 
             h3, h3 a, .coursename a, .card-title a {
-                color: $gt4t-dark-green !important;
+                color: #058101 !important;
                 font-family: $gt4t-font-primary !important;
                 font-weight: 600 !important;
             }
@@ -707,7 +725,7 @@
             }
 
             .teachers span, .teachers a {
-                color: $gt4t-mid-green !important;
+                color: #058101 !important;
             }
 
             .categoryname, .badge {
