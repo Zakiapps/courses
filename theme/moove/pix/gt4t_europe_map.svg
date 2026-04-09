@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400" opacity="0.15">
+  <defs>
+    <pattern id="dots" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.5" fill="#C1FF72"/>
+    </pattern>
+  </defs>
+  <!-- Simplified Europe silhouette made of dots/circles -->
+  <g fill="#C1FF72">
+    <!-- Scandinavia -->
+    <circle cx="250" cy="60" r="4"/><circle cx="260" cy="50" r="4"/>
+    <circle cx="255" cy="75" r="4"/><circle cx="245" cy="90" r="4"/>
+    <circle cx="270" cy="65" r="4"/><circle cx="265" cy="80" r="4"/>
+    <circle cx="240" cy="70" r="4"/><circle cx="275" cy="55" r="4"/>
+    <!-- UK/Ireland -->
+    <circle cx="180" cy="120" r="4"/><circle cx="175" cy="135" r="4"/>
+    <circle cx="190" cy="130" r="4"/><circle cx="185" cy="145" r="4"/>
+    <circle cx="165" cy="125" r="4"/>
+    <!-- Western Europe -->
+    <circle cx="210" cy="160" r="4"/><circle cx="220" cy="155" r="4"/>
+    <circle cx="200" cy="170" r="4"/><circle cx="215" cy="175" r="4"/>
+    <circle cx="195" cy="185" r="4"/><circle cx="205" cy="195" r="4"/>
+    <circle cx="210" cy="210" r="4"/><circle cx="220" cy="200" r="4"/>
+    <!-- Central Europe -->
+    <circle cx="240" cy="150" r="4"/><circle cx="255" cy="145" r="4"/>
+    <circle cx="250" cy="160" r="4"/><circle cx="265" cy="155" r="4"/>
+    <circle cx="245" cy="175" r="4"/><circle cx="260" cy="170" r="4"/>
+    <circle cx="275" cy="165" r="4"/><circle cx="270" cy="180" r="4"/>
+    <!-- Eastern Europe -->
+    <circle cx="290" cy="140" r="4"/><circle cx="300" cy="135" r="4"/>
+    <circle cx="295" cy="155" r="4"/><circle cx="310" cy="145" r="4"/>
+    <circle cx="305" cy="160" r="4"/><circle cx="315" cy="155" r="4"/>
+    <circle cx="300" cy="175" r="4"/><circle cx="320" cy="165" r="4"/>
+    <!-- Southern/Mediterranean -->
+    <circle cx="230" cy="220" r="4"/><circle cx="245" cy="230" r="4"/>
+    <circle cx="255" cy="225" r="4"/><circle cx="240" cy="240" r="4"/>
+    <circle cx="260" cy="240" r="4"/><circle cx="275" cy="235" r="4"/>
+    <circle cx="250" cy="255" r="4"/><circle cx="265" cy="250" r="4"/>
+    <!-- Turkey -->
+    <circle cx="320" cy="210" r="4"/><circle cx="335" cy="205" r="4"/>
+    <circle cx="350" cy="200" r="4"/><circle cx="340" cy="215" r="4"/>
+    <circle cx="355" cy="210" r="4"/><circle cx="365" cy="205" r="4"/>
+    <!-- Iberia -->
+    <circle cx="175" cy="220" r="4"/><circle cx="185" cy="215" r="4"/>
+    <circle cx="180" cy="235" r="4"/><circle cx="190" cy="230" r="4"/>
+    <circle cx="170" cy="240" r="4"/><circle cx="195" cy="245" r="4"/>
+    <!-- Balkans -->
+    <circle cx="285" cy="200" r="4"/><circle cx="295" cy="210" r="4"/>
+    <circle cx="280" cy="215" r="4"/><circle cx="290" cy="225" r="4"/>
+    <!-- Finland highlight -->
+    <circle cx="290" cy="70" r="6" fill="#00D4D4"/>
+    <!-- Germany highlight -->
+    <circle cx="240" cy="155" r="6" fill="#00D4D4"/>
+    <!-- Ireland highlight -->
+    <circle cx="170" cy="130" r="6" fill="#00D4D4"/>
+    <!-- Turkey highlight -->
+    <circle cx="350" cy="205" r="6" fill="#00D4D4"/>
+    <!-- Netherlands highlight -->
+    <circle cx="220" cy="140" r="6" fill="#00D4D4"/>
+  </g>
+</svg>

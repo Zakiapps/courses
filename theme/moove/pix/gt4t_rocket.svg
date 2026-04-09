@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 320" width="200" height="320">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8e8e8"/>
+      <stop offset="100%" stop-color="#c0c0c0"/>
+    </linearGradient>
+  </defs>
+  <!-- Flame -->
+  <ellipse cx="100" cy="290" rx="22" ry="28" fill="#FF6B35" opacity="0.8"/>
+  <ellipse cx="100" cy="285" rx="14" ry="22" fill="#FFD700"/>
+  <ellipse cx="100" cy="280" rx="8" ry="14" fill="#FFF4CC"/>
+  <!-- Fins -->
+  <path d="M60,230 L30,270 L60,260 Z" fill="#E63946"/>
+  <path d="M140,230 L170,270 L140,260 Z" fill="#E63946"/>
+  <!-- Body -->
+  <rect x="70" y="120" width="60" height="140" rx="4" fill="url(#bodyGrad)"/>
+  <!-- Nose cone -->
+  <path d="M70,120 Q100,30 130,120 Z" fill="#E63946"/>
+  <!-- Window -->
+  <circle cx="100" cy="155" r="18" fill="#053225" stroke="#c0c0c0" stroke-width="3"/>
+  <circle cx="100" cy="155" r="12" fill="#00D4D4"/>
+  <circle cx="94" cy="149" r="4" fill="rgba(255,255,255,0.6)"/>
+  <!-- Bottom detail -->
+  <rect x="70" y="250" width="60" height="10" fill="#333"/>
+  <!-- Landing pad -->
+  <rect x="55" y="268" width="90" height="6" rx="3" fill="#333"/>
+</svg>

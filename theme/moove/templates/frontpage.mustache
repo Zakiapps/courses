@@ -15,43 +15,44 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_moove/drawers
+    @template theme_moove/frontpage
 
-    Boost drawer template.
+    GT4T frontpage template for non-logged-in users.
+    Matches the design at gt4t.intelligent-industry.fi
 
     Context variables required for this template:
     * sitename - The name of the site
     * output - The core renderer for the page
     * bodyattributes - attributes for the body tag as a string of html attributes
-    * sidepreblocks - HTML for the blocks
-    * hasblocks - true if there are blocks on this page
-    * courseindexopen - true if the nav drawer should be open on page load
-    * regionmainsettingsmenu - HTML for the region main settings menu
-    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+    * gt4t_hero - Hero section data
+    * gt4t_education - Education section data
+    * gt4t_stats - Stats array
+    * gt4t_domains - Domains section data
+    * gt4t_innovators - Innovators section data
+    * gt4t_change - Change section data
+    * gt4t_movement - Movement section data
+    * gt4t_footer - Footer extra data
 
     Example context (json):
     {
-        "sitename": "Moodle",
+        "sitename": "GT4T",
         "output": {
             "doctype": "<!DOCTYPE html>",
-            "page_title": "Test page",
+            "page_title": "GT4T",
             "favicon": "favicon.ico",
-            "main_content": "<h1>Headings make html validators happier</h1>"
-         },
-        "bodyattributes":"",
-        "sidepreblocks": "<h2>Blocks html goes here</h2>",
-        "hasblocks":true,
-        "courseindexopen": true,
-        "navdraweropen": false,
-        "blockdraweropen": true,
-        "regionmainsettingsmenu": "",
-        "hasregionmainsettingsmenu": false,
-        "addblockbutton": ""
+            "main_content": ""
+        },
+        "bodyattributes": "",
+        "gt4t": true
     }
 }}
 {{> theme_boost/head }}
 
 <body {{{ bodyattributes }}}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 {{> core/local/toast/wrapper}}
 <div id="page-wrapper" class="d-print-block">
 
@@ -59,117 +60,136 @@
 
     {{> theme_moove/navbar }}
 
-    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container bg-white">
-        {{#slidercount}}
-            <div id="mooveslideshow" class="container-fluid">
-                <div id="moove-carousel" class="carousel slide">
-                    {{^slidersingleslide}}
-                        <div class="carousel-indicators">
-                            {{#slides}}
-                                <button type="button" data-bs-target="#moove-carousel" data-bs-slide-to="{{{ key }}}" {{#active}}class="active" aria-current="true"{{/active}}  aria-label="{{slidertitle}}"></button>
-                            {{/slides}}
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container">
+
+        {{! ═══════════════════════════════════════════ }}
+        {{! SECTION 1: HERO                            }}
+        {{! ═══════════════════════════════════════════ }}
+        {{#gt4t_hero}}
+        <section class="gt4t-hero">
+            <div class="gt4t-hero__overlay"></div>
+            <div class="gt4t-hero__content">
+                <h1 class="gt4t-hero__heading">{{{heading}}}</h1>
+                <p class="gt4t-hero__subtitle">{{{subtitle}}}</p>
+                <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--primary">{{{cta_text}}}</a>
+            </div>
+            <div class="gt4t-hero__scroll">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </section>
+        {{/gt4t_hero}}
+
+        {{! ═══════════════════════════════════════════ }}
+        {{! SECTION 2: TRANSFORMING HIGHER EDUCATION   }}
+        {{! ═══════════════════════════════════════════ }}
+        {{#gt4t_education}}
+        <section class="gt4t-education">
+            <div class="gt4t-container">
+                <h2 class="gt4t-education__heading">{{{heading}}}</h2>
+                <p class="gt4t-education__text">{{{text1}}}</p>
+                <p class="gt4t-education__text">{{{text2}}}</p>
+            </div>
+            <div class="gt4t-container">
+                <div class="gt4t-stats">
+                    {{#gt4t_stats}}
+                    <div class="gt4t-stats__card">
+                        <div class="gt4t-stats__card-inner">
+                            <span class="gt4t-stats__number">{{{number}}}</span>
+                            <span class="gt4t-stats__label">{{{label}}}</span>
                         </div>
-                    {{/slidersingleslide}}
-                    <div class="carousel-inner">
-                        {{#slides}}
-                            <div class="carousel-item {{#active}}active{{/active}}">
-                                <img src="{{image}}" alt="{{slidertitle}}" class="d-block w-100">
-                                {{#hascaption}}
-                                    <div class="carousel-caption d-none d-md-block">
-                                        {{#title}}
-                                            <h5 class="title">{{.}}</h5>
-                                        {{/title}}
-                                        {{#caption}}
-                                            <div class="caption">
-                                                {{{.}}}
-                                            </div>
-                                        {{/caption}}
-                                    </div>
-                                {{/hascaption}}
-                            </div>
-                        {{/slides}}
                     </div>
-                    {{^slidersingleslide}}
-                        <button class="carousel-control-prev" type="button" data-bs-target="#moove-carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">{{#str}}previous{{/str}}</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#moove-carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">{{#str}}next{{/str}}</span>
-                        </button>
-                    {{/slidersingleslide}}
+                    {{/gt4t_stats}}
                 </div>
             </div>
-        {{/slidercount}}
+        </section>
+        {{/gt4t_education}}
 
-        {{#displaymarketingbox}}
-            <section id="feature">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 my-3">
-                            <h3 class="h1 mt-3 mb-3">{{{marketingheading}}}</h3>
-                            <div class="marketing-content">{{{marketingcontent}}}</div>
-                        </div>
-                        <div class="col-lg-8 ps-xl-8">
-                            <div class="row">
-                                {{#marketingboxes}}
-                                    <div class="col-sm-6 mt-4">
-                                        <div class="card card-body shadow">
-                                            <div class="d-flex">
-                                                <div class="icon-lg text-white rounded-circle">
-                                                    <img src="{{{icon}}}">
-                                                </div>
-                                                <div class="col ps-3">
-                                                    <h5>{{{heading}}}</h5>
-                                                    <div class="box-content">{{{content}}}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {{/marketingboxes}}
-                            </div>
-                        </div>
+        {{! ═══════════════════════════════════════════ }}
+        {{! SECTION 3: WHERE INNOVATION MEETS SUSTAIN. }}
+        {{! ═══════════════════════════════════════════ }}
+        {{#gt4t_domains}}
+        <section class="gt4t-domains">
+            <div class="gt4t-container">
+                <h2 class="gt4t-domains__heading">{{{heading}}}</h2>
+                <p class="gt4t-domains__subtitle">{{{subtitle}}}</p>
+                <div class="gt4t-domains__grid">
+                    {{#items}}
+                    <div class="gt4t-domains__card gt4t-domains__card--{{{color}}}">
+                        <div class="gt4t-domains__card-accent"></div>
+                        <h3 class="gt4t-domains__card-title">{{{title}}}</h3>
+                        <p class="gt4t-domains__card-text">{{{description}}}</p>
+                    </div>
+                    {{/items}}
+                </div>
+            </div>
+        </section>
+        {{/gt4t_domains}}
+
+        {{! ═══════════════════════════════════════════ }}
+        {{! SECTION 4: POWERED BY EUROPE'S INNOVATORS  }}
+        {{! ═══════════════════════════════════════════ }}
+        {{#gt4t_innovators}}
+        <section class="gt4t-innovators">
+            <div class="gt4t-container">
+                <div class="gt4t-innovators__grid">
+                    <div class="gt4t-innovators__text">
+                        <h2 class="gt4t-innovators__heading">{{{heading}}}</h2>
+                        <p>{{{text1}}}</p>
+                        <p>{{{text2}}}</p>
+                        <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--dark">{{{cta_text}}}</a>
+                    </div>
+                    <div class="gt4t-innovators__map">
+                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_europe_map.svg" alt="" aria-hidden="true">
                     </div>
                 </div>
-            </section>
-        {{/displaymarketingbox}}
+            </div>
+        </section>
+        {{/gt4t_innovators}}
 
-        {{#numbersfrontpage}}
-            <section id="numbers">
-                <div class="moove-container-fluid">
-                    <div class="row customer-area-l1 justify-content-center align-items-center ">
-                        <div class="col-xl-5 col-lg-5 col-md-10">
-                            <div class="sectionheading">
-                                {{{numberscontent}}}
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-7 col-md-10 offset-xl-1">
-                            <div class="row user-rating-box-area">
-                                <div class="col-sm-6 col-xs-8">
-                                    <div class="h-100 rate-box bg-primary">
-                                        <h3>
-                                            {{{numbersusers}}}
-                                        </h3>
-                                        <p>{{#str}}numbersusers, theme_moove{{/str}}</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-xs-8">
-                                    <div class="h-100 rate-box rate-box-2 bg-cloudburst">
-                                        <h3>
-                                            {{{numberscourses}}}
-                                        </h3>
-                                        <p>{{#str}}numberscourses, theme_moove{{/str}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        {{! ═══════════════════════════════════════════ }}
+        {{! SECTION 5: BE PART OF THE CHANGE           }}
+        {{! ═══════════════════════════════════════════ }}
+        {{#gt4t_change}}
+        <section class="gt4t-change">
+            <div class="gt4t-change__blob gt4t-change__blob--1"></div>
+            <div class="gt4t-change__blob gt4t-change__blob--2"></div>
+            <div class="gt4t-container">
+                <div class="gt4t-change__grid">
+                    <div class="gt4t-change__image">
+                        <div class="gt4t-change__image-frame"></div>
+                    </div>
+                    <div class="gt4t-change__text">
+                        <h2 class="gt4t-change__heading">{{{heading}}}</h2>
+                        <p>{{{text}}}</p>
+                        <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--dark">{{{cta_text}}}</a>
                     </div>
                 </div>
-            </section>
-        {{/numbersfrontpage}}
+            </div>
+        </section>
+        {{/gt4t_change}}
 
-        <div id="topofscroll">
+        {{! ═══════════════════════════════════════════ }}
+        {{! SECTION 6: JOIN THE MOVEMENT               }}
+        {{! ═══════════════════════════════════════════ }}
+        {{#gt4t_movement}}
+        <section class="gt4t-movement">
+            <div class="gt4t-container gt4t-movement__inner">
+                <div class="gt4t-movement__rocket">
+                    <img src="{{wwwroot}}/theme/moove/pix/gt4t_rocket.svg" alt="" aria-hidden="true">
+                </div>
+                <h2 class="gt4t-movement__heading">{{{heading}}}</h2>
+                <p class="gt4t-movement__subtitle">{{{subtitle}}}</p>
+                <a href="{{{cta_url}}}" class="gt4t-btn gt4t-btn--primary">{{{cta_text}}}</a>
+            </div>
+        </section>
+        {{/gt4t_movement}}
+
+        {{! ═══════════════════════════════════════════ }}
+        {{! MOODLE CORE CONTENT (hidden for guests)    }}
+        {{! ═══════════════════════════════════════════ }}
+        <div id="topofscroll" class="gt4t-moodle-content">
             <div id="page-content" class="d-print-block main-inner">
                 <div id="region-main-box">
                     <section id="region-main" aria-label="{{#str}}content{{/str}}">
@@ -181,9 +201,10 @@
             </div>
         </div>
 
+        {{! FAQ section kept for admin-configured FAQs }}
         {{#faqenabled}}
-            <section id="faq" class="scale-up scale-up-show">
-                <div class="moove-container-fluid">
+            <section id="faq" class="gt4t-faq scale-up scale-up-show">
+                <div class="gt4t-container">
                     <h2>{{#str}}faq, theme_moove{{/str}}</h2>
 
                     <div class="accordion" id="accordion-faq">
@@ -206,11 +227,11 @@
             </section>
         {{/faqenabled}}
     </div>
+
     {{> theme_moove/footer }}
 
     {{{ output.standard_after_main_region_html }}}
 </div>
-
 
 </body>
 </html>
@@ -221,18 +242,20 @@
         M.util.js_complete('theme_boost/loader');
     });
     require(['jquery'], function($) {
-        $('.carousel').carousel({
-            interval: 5000
-        });
-
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.setAttribute('data-bs-theme', 'dark');
         }
 
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
             const newColorScheme = event.matches ? "dark" : "light";
-
             document.body.setAttribute('data-bs-theme', newColorScheme);
+        });
+
+        // Smooth scroll for hero chevron
+        $('.gt4t-hero__scroll').on('click', function() {
+            $('html, body').animate({
+                scrollTop: $('.gt4t-education').offset().top - 70
+            }, 800);
         });
     });
 {{/js}}

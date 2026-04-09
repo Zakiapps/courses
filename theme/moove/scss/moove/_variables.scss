@@ -1,30 +1,35 @@
 // ============================================================
 // GreenTech4Transformation (GT4T) Brand Colors
-// Visual Identity: görsel kimlik.pdf
+// Visual Identity: GT4T Communication Guide
 // ============================================================
 
 // Main Colors
-$gt4t-dark-green:   #053225 !default;  // Koyu Yeşil — ana arka plan rengi
-$gt4t-mid-green:    #19B35C !default;  // Orta Yeşil — birincil vurgu
-$gt4t-light-green:  #C1FF72 !default;  // Açık Yeşil — highlight / accent
+$gt4t-dark-green:   #053225 !default;
+$gt4t-mid-green:    #19B35C !default;
+$gt4t-light-green:  #C1FF72 !default;
 
 // Secondary Colors
-$gt4t-cyan:         #00D4D4 !default;  // Turkuaz
-$gt4t-teal:         #006D77 !default;  // Derin Teal
+$gt4t-cyan:         #00D4D4 !default;
+$gt4t-teal:         #006D77 !default;
 
 // Neutral Colors
-$gt4t-off-white:    #FAFAFA !default;  // Kırık Beyaz
-$gt4t-dark-text:    #0D0D0D !default;  // Koyu Metin
+$gt4t-off-white:    #FAFAFA !default;
+$gt4t-dark-text:    #0D0D0D !default;
+
+// Typography — Work Sans (body + titles), Orbitron (display/effect)
+$gt4t-font-primary:  'Work Sans', sans-serif !default;
+$gt4t-font-display:  'Orbitron', sans-serif !default;
+$font-family-sans-serif: $gt4t-font-primary !default;
 
 // Moodle/Bootstrap mappings
 $body-bg: $gt4t-off-white !default;
-$brand-primary: $gt4t-mid-green !default;         // Ana marka rengi → Orta Yeşil
+$brand-primary: $gt4t-mid-green !default;
 $green: $gt4t-mid-green !default;
-$gold: $gt4t-light-green !default;                // Highlight/accent → Açık Yeşil
+$gold: $gt4t-light-green !default;
 $background: var(--bs-body-bg) !default;
-$secondary-menu-color: $gt4t-dark-green !default; // İkincil menü → Koyu Yeşil
+$secondary-menu-color: $gt4t-dark-green !default;
 
-// Social media colors (unchanged)
+// Social media colors
 $moodle-color: #f98012 !default;
 $facebook-color: #4167B2 !default;
 $twitter-color: #55acee !default;

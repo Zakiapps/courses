@@ -1,3 +1,9 @@
+// ============================================================
+// GT4T Frontpage Styles
+// Matches gt4t.intelligent-industry.fi
+// ============================================================
+
+// Preserve dashboard-card styles for logged-in frontpage / category pages
 .pagelayout-frontpage,
 .pagelayout-coursecategory {
     .dashboard-card {
@@ -14,8 +20,8 @@
             right: 0;
             left: 0;
             bottom: 0;
-            border-top-left-radius: .5rem;;
-            border-top-right-radius: .5rem;;
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
         }
 
         .card-img.dashboard-card-img {
@@ -31,64 +37,38 @@
             padding: .8rem;
         }
 
-        .customfields {
-            .customfield {
-                font-size: 80%;
-                margin-bottom: .25rem;
-
-                &:last-of-type {
-                    margin-bottom: 0;
-                }
-
-                .customfieldname,
-                .customfieldseparator {
-                    font-weight: 500;
-                }
-            }
+        .customfields .customfield {
+            font-size: 80%;
+            margin-bottom: .25rem;
+            &:last-of-type { margin-bottom: 0; }
+            .customfieldname,
+            .customfieldseparator { font-weight: 500; }
         }
 
         .enrolmenticons {
             position: absolute;
             bottom: 8px;
             right: 0;
-
             .enrolmenticon {
                 padding: 4px 8px;
                 background-color: #fff;
                 color: $brand-primary;
                 border-radius: .5rem;
                 margin: 0 4px;
-
-                .icon {
-                    margin-right: 0;
-                }
+                .icon { margin-right: 0; }
             }
         }
 
         .course-contacts {
             padding: 0 0.8rem 0.8rem 0.8rem;
-
             .contact {
                 display: flex;
-
-                &:not(:first-of-type) {
-                    margin-top: .4rem;
-                }
-
-                img {
-                    width: 48px;
-                    height: 48px;
-                    border: 1px solid var(--bs-border-color);
-                }
-
+                &:not(:first-of-type) { margin-top: .4rem; }
+                img { width: 48px; height: 48px; border: 1px solid var(--bs-border-color); }
                 p {
                     margin-left: .4rem;
                     margin-bottom: 0;
-
-                    &.role {
-                        color: var(--bs-body-color);
-                        font-size: 80%;
-                    }
+                    &.role { color: var(--bs-body-color); font-size: 80%; }
                 }
             }
         }
@@ -99,154 +79,429 @@
     }
 }
 
+// ────────────────────────────────────────────────────────────
+// GT4T Container utility
+// ────────────────────────────────────────────────────────────
+.gt4t-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+// ────────────────────────────────────────────────────────────
+// GT4T Buttons
+// ────────────────────────────────────────────────────────────
+.gt4t-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-family: $gt4t-font-primary;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+
+    &--primary {
+        background-color: $gt4t-mid-green;
+        color: #fff;
+        &:hover {
+            background-color: darken($gt4t-mid-green, 8%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(25, 179, 92, 0.4);
+        }
+    }
+
+    &--dark {
+        background-color: $gt4t-dark-green;
+        color: #fff;
+        &:hover {
+            background-color: lighten($gt4t-dark-green, 5%);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(5, 50, 37, 0.4);
+        }
+    }
+}
+
+// ════════════════════════════════════════════════════════════
+// NON-LOGGED-IN FRONTPAGE
+// ════════════════════════════════════════════════════════════
 #page-site-index.notloggedin {
     #page {
-        background-color: var(--moove-bg-white) !important;
+        background-color: transparent !important;
     }
-    #mooveslideshow {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        padding: 0;
 
-        .carousel-inner {
-            border-radius: .5rem;
+    // ────────────────────────────────────────────────────────
+    // SECTION 1: HERO
+    // ────────────────────────────────────────────────────────
+    .gt4t-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: hidden;
+        background:
+            linear-gradient(160deg,
+                rgba(5, 50, 37, 0.92) 0%,
+                rgba(5, 50, 37, 0.75) 40%,
+                rgba(25, 179, 92, 0.5) 100%
+            ),
+            linear-gradient(to bottom right, $gt4t-dark-green, $gt4t-mid-green);
+        background-size: cover;
+        background-position: center;
+
+        &__overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 60% 50%, rgba(25, 179, 92, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse at 80% 80%, rgba(193, 255, 114, 0.08) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        .caption {
-            text-align: center;
+        &__content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+            margin-left: 10%;
         }
 
-        .carousel-indicators {
-            background-color: rgba(0, 0, 0, .6);
-            margin-bottom: 15px;
-            height: 20px;
-            border-bottom-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, .6);
-            margin: 0;
-            bottom: 35px;
-            padding: 15px;
-            border-top-left-radius: .5rem;
-            border-top-right-radius: .5rem;
-        }
-
-        .carousel-fade .carousel-item {
-            opacity: 0;
-            transition-duration: .6s;
-            transition-property: opacity;
-        }
-
-        .carousel-fade  .carousel-item.active,
-        .carousel-fade  .carousel-item-next.carousel-item-left,
-        .carousel-fade  .carousel-item-prev.carousel-item-right {
-            opacity: 1;
-        }
-
-        .carousel-fade .active.carousel-item-left,
-        .carousel-fade  .active.carousel-item-right {
-            opacity: 0;
-        }
-
-        .carousel-fade  .carousel-item-next,
-        .carousel-fade .carousel-item-prev,
-        .carousel-fade .carousel-item.active,
-        .carousel-fade .active.carousel-item-left,
-        .carousel-fade  .active.carousel-item-prev {
-            transform: translateX(0);
-            transform: translate3d(0, 0, 0);
-        }
-
-        .carousel-item .title,
-        .carousel-item .caption {
+        &__heading {
+            font-family: $gt4t-font-primary;
+            font-weight: 800;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
             color: #fff;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .carousel-item .caption .text_to_html p:last-of-type {
-            margin-bottom: 0;
+        &__subtitle {
+            font-family: $gt4t-font-primary;
+            font-weight: 400;
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            max-width: 650px;
+        }
+
+        &__scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            animation: gt4t-bounce 2s infinite;
+            z-index: 2;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            &:hover { opacity: 1; }
         }
     }
 
-    #feature {
-        background-color: var(--bs-body-bg);
-        padding: 4rem 0;
-        margin-left: -15px;
-        margin-right: -15px;
+    @keyframes gt4t-bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(10px); }
+    }
 
-        .card {
-            border: 1px solid #e2e8f0;
-            background-color: var(--moove-bg-white);
+    // ────────────────────────────────────────────────────────
+    // SECTION 2: TRANSFORMING HIGHER EDUCATION
+    // ────────────────────────────────────────────────────────
+    .gt4t-education {
+        background: linear-gradient(135deg, $gt4t-light-green 0%, #a8f05e 50%, $gt4t-light-green 100%);
+        padding: 5rem 0;
+        color: $gt4t-dark-text;
+
+        &__heading {
+            font-family: $gt4t-font-primary;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: $gt4t-dark-text;
+            margin-bottom: 1.5rem;
         }
 
-        .icon-lg {
-            width: 6rem;
-            height: 6rem;
-            display: inline-flex;
-            align-items: center;
+        &__text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: $gt4t-dark-text;
+            margin-bottom: 1rem;
+            max-width: 900px;
+        }
+    }
+
+    .gt4t-stats {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 3rem;
+        justify-content: center;
+
+        &__card {
+            flex: 1;
+            max-width: 280px;
+            perspective: 600px;
+        }
+
+        &__card-inner {
+            background: linear-gradient(135deg, rgba(5, 50, 37, 0.85) 0%, rgba(5, 50, 37, 0.7) 100%);
+            color: #fff;
+            padding: 2.5rem 1.5rem;
+            border-radius: 8px;
+            transform: skewX(-3deg);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
+
+            &:hover {
+                transform: skewX(-3deg) translateY(-4px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            }
+        }
+
+        &__number {
+            font-family: $gt4t-font-display;
+            font-weight: 700;
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.75rem;
+            color: $gt4t-light-green;
+        }
+
+        &__label {
+            font-family: $gt4t-font-primary;
+            font-weight: 600;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            transform: skewX(3deg);
+        }
+    }
+
+    // ────────────────────────────────────────────────────────
+    // SECTION 3: WHERE INNOVATION MEETS SUSTAINABILITY
+    // ────────────────────────────────────────────────────────
+    .gt4t-domains {
+        background: #fff;
+        padding: 5rem 0;
+
+        &__heading {
+            font-family: $gt4t-font-primary;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: $gt4t-dark-text;
+            margin-bottom: 1rem;
+        }
+
+        &__subtitle {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+
+        &__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        &__card {
+            padding: 0;
+
+            &-accent {
+                height: 6px;
+                border-radius: 3px;
+                margin-bottom: 1.5rem;
+            }
+
+            &--green .gt4t-domains__card-accent { background-color: $gt4t-mid-green; }
+            &--cyan .gt4t-domains__card-accent { background-color: $gt4t-cyan; }
+            &--teal .gt4t-domains__card-accent { background-color: $gt4t-teal; }
+
+            &-title {
+                font-family: $gt4t-font-primary;
+                font-weight: 700;
+                font-size: 1.25rem;
+                color: $gt4t-dark-text;
+                margin-bottom: 0.75rem;
+            }
+
+            &-text {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                color: #555;
+            }
+        }
+    }
+
+    // ────────────────────────────────────────────────────────
+    // SECTION 4: POWERED BY EUROPE'S INNOVATORS
+    // ────────────────────────────────────────────────────────
+    .gt4t-innovators {
+        background-color: $gt4t-dark-green;
+        color: #fff;
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        &__heading {
+            font-family: $gt4t-font-primary;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        &__text p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 1rem;
+        }
+
+        &__map {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             img {
-                max-width: 100%;
+                width: 100%;
+                max-width: 450px;
+                opacity: 1;
             }
         }
     }
 
-    #numbers {
-        padding: 5.625rem 0;
+    // ────────────────────────────────────────────────────────
+    // SECTION 5: BE PART OF THE CHANGE
+    // ────────────────────────────────────────────────────────
+    .gt4t-change {
+        background-color: $gt4t-cyan;
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+        color: $gt4t-dark-text;
 
-        .sectionheading p {
-            line-height: 1;
+        &__blob {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 0;
+
+            &--1 {
+                width: 500px;
+                height: 500px;
+                background: $gt4t-mid-green;
+                left: -100px;
+                bottom: -150px;
+                opacity: 0.7;
+            }
+
+            &--2 {
+                width: 300px;
+                height: 300px;
+                background: $gt4t-light-green;
+                left: 100px;
+                bottom: -50px;
+                opacity: 0.5;
+            }
         }
 
-        .user-rating-box-area {
-            .rate-box {
-                box-shadow: 0 6px 0 rgb(23 135 252 / 65%);
-                border-radius: 25px;
-                padding: 30px 40px 35px 40px;
+        &__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
 
-                &.bg-primary {
-                    background-color: #1787fc !important;
-                }
+        &__image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-                &.bg-cloudburst {
-                    background-color: #213053;
-                }
+        &__image-frame {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 8px solid $gt4t-light-green;
+            background:
+                linear-gradient(135deg, $gt4t-dark-green 0%, $gt4t-teal 100%);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
 
-                h3 {
-                    color: #fff;
-                    font-size: 60px;
-                    font-weight: 600;
-                    font-style: normal;
-                    letter-spacing: -1px;
-                    line-height: 66px;
-                    margin-bottom: 30px;
-                }
+        &__heading {
+            font-family: $gt4t-font-primary;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: $gt4t-dark-text;
+            margin-bottom: 1rem;
+        }
 
-                p {
-                    color: #fff;
-                    font-size: 17px;
-                    font-weight: 400;
-                    font-style: normal;
-                    letter-spacing: normal;
-                    line-height: 30px;
-                    margin-bottom: 0;
-                }
-            }
-
-            .rate-box-2 {
-                margin-top: 0;
-                box-shadow: 0 6px 0 rgb(33 48 83 / 65%);
-            }
+        &__text p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: $gt4t-dark-text;
+            margin-bottom: 1.5rem;
         }
     }
 
-    #topofscroll {
+    // ────────────────────────────────────────────────────────
+    // SECTION 6: JOIN THE MOVEMENT
+    // ────────────────────────────────────────────────────────
+    .gt4t-movement {
+        background: #fff;
+        padding: 4rem 0 5rem;
+
+        &__inner {
+            text-align: center;
+        }
+
+        &__rocket {
+            margin-bottom: 2rem;
+            img {
+                width: 160px;
+                height: auto;
+                filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
+            }
+        }
+
+        &__heading {
+            font-family: $gt4t-font-primary;
+            font-weight: 700;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: $gt4t-dark-text;
+            margin-bottom: 0.75rem;
+        }
+
+        &__subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+    }
+
+    // ────────────────────────────────────────────────────────
+    // MOODLE CONTENT AREA (for core course list etc.)
+    // ────────────────────────────────────────────────────────
+    .gt4t-moodle-content {
         background-color: var(--bs-body-bg);
-        margin-left: -15px;
-        margin-right: -15px;
 
         #page-content,
         #region-main {
@@ -254,40 +509,73 @@
         }
 
         #page-content {
-            padding-left: 0;
-            padding-right: 0;
+            padding: 2rem 0;
             margin-bottom: 0;
         }
 
-        #frontpage-available-course-list {
-            h2 {
-                text-align: center;;
-            }
+        #frontpage-available-course-list h2 {
+            text-align: center;
         }
     }
 
-    #faq {
+    // ────────────────────────────────────────────────────────
+    // FAQ (kept from original, restyled)
+    // ────────────────────────────────────────────────────────
+    .gt4t-faq {
         padding: 4rem 0;
+        background: $gt4t-off-white;
 
         h2 {
             text-align: center;
+            font-family: $gt4t-font-primary;
+            font-weight: 700;
+            margin-bottom: 2rem;
         }
 
         .accordion {
             width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
 
             .accordion-button:not(.collapsed) {
-                background-color: $brand-primary;
+                background-color: $gt4t-mid-green;
                 color: #fff;
             }
 
             .accordion-item {
-                border: var(--bs-accordion-border-width) solid $brand-primary;
+                border: var(--bs-accordion-border-width) solid $gt4t-mid-green;
             }
 
             .accordion-button:not(.collapsed)::after {
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
             }
+        }
+    }
+}
+
+// ════════════════════════════════════════════════════════════
+// RESPONSIVE
+// ════════════════════════════════════════════════════════════
+@include media-breakpoint-down(lg) {
+    #page-site-index.notloggedin {
+        .gt4t-innovators__grid,
+        .gt4t-change__grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .gt4t-innovators__map {
+            order: -1;
+            img { max-width: 300px; }
+        }
+
+        .gt4t-change__image {
+            order: -1;
+        }
+
+        .gt4t-change__image-frame {
+            width: 250px;
+            height: 250px;
         }
     }
 }
@@ -298,11 +586,41 @@
         width: 100% !important;
         max-width: 100% !important;
         margin: 1rem 0;
-        -webkit-box-shadow: none;
         box-shadow: none;
     }
 
     #page-site-index.notloggedin {
+        .gt4t-hero__content {
+            margin-left: 5%;
+            padding: 0 1rem;
+        }
+
+        .gt4t-stats {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gt4t-stats__card {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .gt4t-stats__card-inner {
+            transform: none;
+        }
+
+        .gt4t-stats__label {
+            transform: none;
+        }
+
+        .gt4t-domains__grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gt4t-container {
+            padding: 0 1.5rem;
+        }
+
         .footer-content-popover .footer-section {
             text-align: center;
         }
@@ -315,10 +633,29 @@
 
 @media (max-width: 576px) {
     #page-site-index.notloggedin {
-        #numbers {
-            .rate-box-2 {
-                margin-top: 1rem !important;
-            }
+        .gt4t-hero__heading {
+            font-size: 2rem;
+        }
+
+        .gt4t-hero__content {
+            margin-left: 0;
+            text-align: center;
+        }
+
+        .gt4t-education,
+        .gt4t-domains,
+        .gt4t-change,
+        .gt4t-movement {
+            padding: 3rem 0;
+        }
+
+        .gt4t-change__blob {
+            display: none;
+        }
+
+        .gt4t-change__image-frame {
+            width: 200px;
+            height: 200px;
         }
     }
 }

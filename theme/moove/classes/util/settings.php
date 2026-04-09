@@ -126,6 +126,12 @@ class settings {
             }
         }
 
+        $templatecontext['gt4t_footer'] = [
+            'description' => 'A Europe-wide initiative empowering universities and innovators to lead the green and digital transition.',
+            'disclaimer' => 'GT4T is supported by the EIT HEI Initiative, and guided and co-funded by EIT Climate-KIC.',
+            'copyright' => "\u{00a9} Green Tech for Transformation " . date('Y'),
+        ];
+
         return $templatecontext;
     }
 
@@ -139,8 +145,96 @@ class settings {
             $this->frontpage_slideshow(),
             $this->frontpage_marketingboxes(),
             $this->frontpage_numbers(),
-            $this->faq()
+            $this->faq(),
+            $this->gt4t_frontpage()
         );
+    }
+
+    /**
+     * Get GT4T-specific frontpage section data
+     *
+     * @return array
+     */
+    public function gt4t_frontpage() {
+        global $CFG;
+
+        $templatecontext = [];
+        $templatecontext['gt4t'] = true;
+        $templatecontext['wwwroot'] = $CFG->wwwroot;
+
+        $templatecontext['gt4t_hero'] = [
+            'heading' => "Empowering Europe\u{2019}s Green and Digital Future",
+            'subtitle' => 'GT4T unites universities, innovators, and entrepreneurs to turn research into real-world solutions driving sustainability, digital transformation, and deep-tech growth across Europe.',
+            'cta_text' => 'Join the transformation',
+            'cta_url' => $CFG->wwwroot . '/login/index.php',
+        ];
+
+        $templatecontext['gt4t_education'] = [
+            'heading' => 'Transforming Higher Education into Innovation Powerhouses',
+            'text1' => 'Higher education institutions are central to Europe\'s green and digital transition, but unlocking their full innovation potential requires new tools, skills, and collaboration models. GT4T supports HEIs in strengthening their role as engines of sustainable innovation and entrepreneurship.',
+            'text2' => 'Through Venture Science Labs, challenge-based learning, and cross-border cooperation, GT4T enables researchers, students, and professionals to work on real-world challenges and develop solutions that move from classrooms and laboratories to startups, pilots, and market-ready innovations.',
+        ];
+
+        $templatecontext['gt4t_stats'] = [
+            [
+                'number' => '30',
+                'label' => 'start-ups and 60 strategic partnerships created by 2027',
+            ],
+            [
+                'number' => '1,000+',
+                'label' => 'participants trained across Europe',
+            ],
+            [
+                'number' => '3',
+                'label' => 'deep-tech innovations prepared for real-world deployment',
+            ],
+        ];
+
+        $templatecontext['gt4t_domains'] = [
+            'heading' => 'Where Innovation Meets Sustainability',
+            'subtitle' => 'GT4T focuses on key domains where education, technology, and entrepreneurship can deliver the greatest societal impact.',
+            'items' => [
+                [
+                    'title' => 'Circular Economy',
+                    'description' => 'Turning waste into value through smart design, sustainable materials, and resource-efficient systems that support long-term environmental and economic resilience.',
+                    'color' => 'green',
+                ],
+                [
+                    'title' => 'Digital Transformation',
+                    'description' => "Building intelligent, data-driven solutions \u{2014} from AI to smart systems \u{2014} that enable more connected, efficient, and inclusive industries and services.",
+                    'color' => 'cyan',
+                ],
+                [
+                    'title' => 'Clean Energy',
+                    'description' => "Accelerating the transition toward renewable, low-emission energy solutions that support Europe\u{2019}s climate goals and energy independence.",
+                    'color' => 'teal',
+                ],
+            ],
+        ];
+
+        $templatecontext['gt4t_innovators'] = [
+            'heading' => "Powered by Europe\u{2019}s Leading Innovators",
+            'text1' => "GT4T is built on collaboration. From Finland to T\u{00fc}rkiye, our network brings together universities, startups, industry partners, innovation hubs, and regional stakeholders to create a vibrant, cross-border ecosystem for sustainable innovation.",
+            'text2' => "By combining local expertise with European cooperation, GT4T strengthens regional innovation capacity while contributing to Europe\u{2019}s shared green and digital ambitions.",
+            'cta_text' => 'Meet our partners',
+            'cta_url' => $CFG->wwwroot . '/course/index.php',
+        ];
+
+        $templatecontext['gt4t_change'] = [
+            'heading' => 'Be Part of the Change',
+            'text' => "GT4T is open to everyone shaping Europe\u{2019}s future; students, researchers, entrepreneurs, educators, and policymakers alike. Whether you want to learn new skills, collaborate across borders, or turn ideas into action, GT4T offers pathways to get involved. From training programmes and challenges to startup support and community events, GT4T creates opportunities to grow, connect, and lead meaningful change.",
+            'cta_text' => 'Explore Opportunities',
+            'cta_url' => $CFG->wwwroot . '/course/index.php',
+        ];
+
+        $templatecontext['gt4t_movement'] = [
+            'heading' => 'Join the GreenTech4Transformation Movement',
+            'subtitle' => "Together, we\u{2019}re building a smarter, greener Europe.",
+            'cta_text' => 'Contact Us',
+            'cta_url' => $CFG->wwwroot . '/login/index.php',
+        ];
+
+        return $templatecontext;
     }
 
     /**

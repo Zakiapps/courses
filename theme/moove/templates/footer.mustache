@@ -17,7 +17,7 @@ along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 {{!
     @template theme_moove/footer
 
-    Page footer.
+    GT4T Footer matching gt4t.intelligent-industry.fi design.
 
     Example context (json):
     {
@@ -28,156 +28,92 @@ along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
             "services_support": "Services and support",
             "login_info": "You are logged in as cute kitten",
             "moodle_release": "90210"
+        },
+        "gt4t_footer": {
+            "description": "A Europe-wide initiative...",
+            "disclaimer": "GT4T is supported by...",
+            "copyright": "Green Tech for Transformation 2026"
         }
     }
 }}
 
-<footer id="page-footer" class="footer-popover">
-    <div class="moove-container-fluid footer-columns">
-        <div class="row">
-            <div class="col-md-4 column-left">
-                {{#hasfootercontact}}
-                    <div class="contact">
-                        <h3 class="footer-title">{{#str}}contactus, theme_moove{{/str}}</h3>
+<footer id="page-footer" class="footer-popover gt4t-footer">
+    <div class="gt4t-footer__main">
+        <div class="gt4t-footer__container">
+            <div class="gt4t-footer__grid">
+                <div class="gt4t-footer__left">
+                    {{# output.should_display_logo }}
+                        <div class="gt4t-footer__logo">
+                            <img src="{{output.get_logo}}" class="logo light" alt="{{sitename}}">
+                            {{#output.get_logo_dark}}
+                                <img src="{{.}}" class="logo dark" alt="{{sitename}}">
+                            {{/output.get_logo_dark}}
+                        </div>
+                    {{/ output.should_display_logo }}
+                    {{^ output.should_display_logo }}
+                        <div class="gt4t-footer__logo">
+                            <span class="gt4t-footer__sitename">{{{ sitename }}}</span>
+                        </div>
+                    {{/ output.should_display_logo }}
 
-                        <ul>
-                            {{#website}}
-                                <li>
-                                    <a href="{{{website}}}" target="_blank" class="website btn btn-link">
-                                        <i class="fa fa-globe"></i>
-                                    </a>
-                                </li>
-                            {{/website}}
-                            {{#mobile}}
-                                <li>
-                                    <a href="tel:{{{mobile}}}" target="_blank" class="mobile btn btn-link">
-                                        <i class="fa fa-phone"></i>
-                                    </a>
-                                </li>
-                            {{/mobile}}
-                            {{#mail}}
-                                <li>
-                                    <a href="mailto:{{{mail}}}" target="_blank" class="mail btn btn-link">
-                                        <i class="fa fa-envelope"></i>
-                                    </a>
-                                </li>
-                            {{/mail}}
-                        </ul>
-                    </div>
-                {{/hasfootercontact}}
+                    {{#gt4t_footer}}
+                        <p class="gt4t-footer__description">{{{description}}}</p>
+                    {{/gt4t_footer}}
 
-                {{#hasfootersocial}}
-                    <div class="socialnetworks">
-                        <h3 class="footer-title">{{#str}}followus, theme_moove{{/str}}</h3>
-
-                        <ul class="mb-0">
-                            {{#tiktok}}
-                                <li>
-                                    <a href="{{{tiktok}}}" target="_blank" class="tiktok btn btn-link btn-rounded">
-                                        <i class="fab fa-tiktok"></i>
-                                    </a>
-                                </li>
-                            {{/tiktok}}
-
-                            {{#facebook}}
-                                <li>
-                                    <a href="{{{facebook}}}" target="_blank" class="facebook btn btn-link btn-rounded">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                </li>
-                            {{/facebook}}
-
-                            {{#twitter}}
-                                <li>
-                                    <a href="{{{twitter}}}" target="_blank" class="twitter btn btn-link btn-rounded">
-                                        <i class="fa fa-twitter"></i>
-                                    </a>
-                                </li>
-                            {{/twitter}}
-
-                            {{#instagram}}
-                                <li>
-                                    <a href="{{{instagram}}}" target="_blank" class="instagram btn btn-link btn-rounded">
-                                        <i class="fa fa-instagram"></i>
-                                    </a>
-                                </li>
-                            {{/instagram}}
-
+                    {{#hasfootersocial}}
+                        <div class="gt4t-footer__social">
                             {{#linkedin}}
-                                <li>
-                                    <a href="{{{linkedin}}}" target="_blank" class="linkedin btn btn-link btn-rounded">
-                                        <i class="fa fa-linkedin"></i>
-                                    </a>
-                                </li>
+                                <a href="{{{linkedin}}}" target="_blank" class="gt4t-footer__social-link" aria-label="LinkedIn">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
                             {{/linkedin}}
-
-                            {{#pinterest}}
-                                <li>
-                                    <a href="{{{pinterest}}}" target="_blank" class="pinterest btn btn-link btn-rounded">
-                                        <i class="fa fa-pinterest"></i>
-                                    </a>
-                                </li>
-                            {{/pinterest}}
-
+                            {{#mail}}
+                                <a href="mailto:{{{mail}}}" class="gt4t-footer__social-link" aria-label="Email">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                            {{/mail}}
+                            {{#facebook}}
+                                <a href="{{{facebook}}}" target="_blank" class="gt4t-footer__social-link" aria-label="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            {{/facebook}}
+                            {{#twitter}}
+                                <a href="{{{twitter}}}" target="_blank" class="gt4t-footer__social-link" aria-label="Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            {{/twitter}}
+                            {{#instagram}}
+                                <a href="{{{instagram}}}" target="_blank" class="gt4t-footer__social-link" aria-label="Instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            {{/instagram}}
                             {{#youtube}}
-                                <li>
-                                    <a href="{{{youtube}}}" target="_blank" class="youtube btn btn-link btn-rounded">
-                                        <i class="fa fa-youtube"></i>
-                                    </a>
-                                </li>
+                                <a href="{{{youtube}}}" target="_blank" class="gt4t-footer__social-link" aria-label="YouTube">
+                                    <i class="fa fa-youtube"></i>
+                                </a>
                             {{/youtube}}
+                        </div>
+                    {{/hasfootersocial}}
 
-                            {{#whatsapp}}
-                                <li>
-                                    <a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}" target="_blank" class="whatsapp btn btn-link btn-rounded">
-                                    <i class="fa fa-whatsapp"></i>
-                                    </a>
-                                </li>
-                            {{/whatsapp}}
+                    {{#gt4t_footer}}
+                        <p class="gt4t-footer__copyright">{{{copyright}}}</p>
+                    {{/gt4t_footer}}
+                </div>
 
-                            {{#telegram}}
-                                <li>
-                                    <a href="{{{telegram}}}" target="_blank" class="telegram btn btn-link btn-rounded">
-                                        <i class="fa fa-telegram"></i>
-                                    </a>
-                                </li>
-                            {{/telegram}}
-                        </ul>
+                <div class="gt4t-footer__right">
+                    {{#gt4t_footer}}
+                        <p class="gt4t-footer__disclaimer">{{{disclaimer}}}</p>
+                    {{/gt4t_footer}}
+
+                    <div class="gt4t-footer__moodle-info">
+                        {{# output.supportemail }}
+                            <div class="supportemail">{{{ output.supportemail }}}</div>
+                        {{/ output.supportemail }}
+                        {{{ output.login_info }}}
+                        {{{ output.standard_footer_html }}}
+                        <div class="tool_usertours-resettourcontainer"></div>
                     </div>
-                {{/hasfootersocial}}
-            </div>
-            <div class="col-md-4 column-center">
-                {{# output.supportemail }}
-                    <div class="supportemail">{{{ output.supportemail }}}</div>
-                {{/ output.supportemail }}
-
-                {{{ output.login_info }}}
-
-                {{{ output.standard_footer_html }}}
-
-                <div class="tool_usertours-resettourcontainer"></div>
-            </div>
-            <div class="col-md-4 column-right">
-                {{#enablemobilewebservice}}
-                    {{#mobilesetuplink}}
-                        <a href="{{{mobilesetuplink}}}">{{#str}}getmoodleonyourmobile, tool_mobile{{/str}}</a>
-                    {{/mobilesetuplink}}
-                    {{^mobilesetuplink}}
-                        <h3 class="footer-title">{{#str}}getmoodleonyourmobile, tool_mobile{{/str}}</h3>
-                    {{/mobilesetuplink}}
-                    <div class="stores">
-                        {{#androidappid}}
-                            <a href="https://play.google.com/store/apps/details?id={{androidappid}}">
-                            <img src="{{config.wwwroot}}/theme/moove/pix/store_google.svg" alt="Play Store">
-                            </a>
-                        {{/androidappid}}
-                        {{#iosappid}}
-                            <a class="mt-1" href="https://apps.apple.com/app/id{{iosappid}}">
-                                <img src="{{config.wwwroot}}/theme/moove/pix/store_apple.svg" alt="App Store">
-                            </a>
-                        {{/iosappid}}
-                    </div>
-                {{/enablemobilewebservice}}
+                </div>
             </div>
         </div>
     </div>
@@ -217,15 +153,6 @@ along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
                     {{#str}}version, core{{/str}} {{{ output.moodle_release }}}
                 </div>
             {{/output.moodle_release}}
-        </div>
-    </div>
-
-    <div class="copyright">
-        <div class="madeby">
-            <p>{{#str}}themedevelopedby, theme_moove{{/str}}</p>
-            <a href="https://conecti.me">
-                <img src="{{config.wwwroot}}/theme/moove/pix/logo_conectime.svg" alt="Conecti.me" style="height: 40px;">
-            </a>
         </div>
     </div>
 </footer>
