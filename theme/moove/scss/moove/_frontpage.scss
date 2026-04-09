@@ -5,6 +5,16 @@
         width: calc(33.33% - 2rem) !important;
         max-width: calc(33.33% - 2rem) !important;
         margin: 1rem;
+        border: none !important;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: var(--moove-bg-white);
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(25, 179, 92, 0.12); // Subtle GT4T green shadow
+        }
 
         &.dimmed .card-img::after {
             content: '';
@@ -14,21 +24,27 @@
             right: 0;
             left: 0;
             bottom: 0;
-            border-top-left-radius: .5rem;;
-            border-top-right-radius: .5rem;;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
         }
 
         .card-img.dashboard-card-img {
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
         }
 
         .dashboard-card-footer {
-            border-radius: .5rem;
+            border-radius: 16px;
         }
 
         .card-body {
-            padding: .8rem;
+            padding: 1.2rem;
+            h5 {
+                font-weight: 700;
+                color: $gt4t-dark-green;
+            }
         }
 
         .customfields {
@@ -49,15 +65,17 @@
 
         .enrolmenticons {
             position: absolute;
-            bottom: 8px;
-            right: 0;
+            bottom: 12px;
+            right: 12px;
 
             .enrolmenticon {
-                padding: 4px 8px;
-                background-color: #fff;
-                color: $brand-primary;
+                padding: 6px 10px;
+                background-color: $gt4t-light-green;
+                color: $gt4t-dark-green;
+                font-weight: 600;
                 border-radius: .5rem;
                 margin: 0 4px;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 
                 .icon {
                     margin-right: 0;
@@ -66,10 +84,11 @@
         }
 
         .course-contacts {
-            padding: 0 0.8rem 0.8rem 0.8rem;
+            padding: 0 1.2rem 1.2rem 1.2rem;
 
             .contact {
                 display: flex;
+                align-items: center;
 
                 &:not(:first-of-type) {
                     margin-top: .4rem;
@@ -78,23 +97,27 @@
                 img {
                     width: 48px;
                     height: 48px;
-                    border: 1px solid var(--bs-border-color);
+                    border: 2px solid $gt4t-middle-green;
+                    border-radius: 50%;
                 }
 
                 p {
-                    margin-left: .4rem;
+                    margin-left: .6rem;
                     margin-bottom: 0;
+                    font-weight: 600;
+                    color: $gt4t-dark-green;
 
                     &.role {
-                        color: var(--bs-body-color);
+                        color: rgba(5, 50, 37, 0.7); // Faded dark green
                         font-size: 80%;
+                        font-weight: 400;
                     }
                 }
             }
         }
 
         .dashboard-card-footer {
-            padding: 0 .8rem .8rem .8rem;
+            padding: 0 1.2rem 1.2rem 1.2rem;
         }
     }
 }
@@ -105,11 +128,12 @@
     }
     #mooveslideshow {
         margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         padding: 0;
 
         .carousel-inner {
-            border-radius: .5rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(5, 50, 37, 0.15); // Dark green shadow
         }
 
         .caption {
@@ -117,25 +141,45 @@
         }
 
         .carousel-indicators {
-            background-color: rgba(0, 0, 0, .6);
+            background-color: rgba(5, 50, 37, 0.85); // GT4T dark green bg
             margin-bottom: 15px;
-            height: 20px;
-            border-bottom-left-radius: .5rem;
-            border-bottom-right-radius: .5rem;
+            height: 24px;
+            border-radius: 12px;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 15px;
+
+            li {
+                background-color: rgba(255, 255, 255, 0.5);
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                margin: 7px 5px;
+                border: none;
+                
+                &.active {
+                    background-color: $gt4t-light-green;
+                    transform: scale(1.2);
+                }
+            }
         }
 
         .carousel-caption {
-            background-color: rgba(0, 0, 0, .6);
+            background: linear-gradient(135deg, rgba(5, 50, 37, 0.9) 0%, rgba(25, 179, 92, 0.8) 100%);
             margin: 0;
-            bottom: 35px;
-            padding: 15px;
-            border-top-left-radius: .5rem;
-            border-top-right-radius: .5rem;
+            bottom: 45px;
+            padding: 25px;
+            border-radius: 16px;
+            left: 10%;
+            right: 10%;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
         .carousel-fade .carousel-item {
             opacity: 0;
-            transition-duration: .6s;
+            transition-duration: .8s;
             transition-property: opacity;
         }
 
@@ -159,9 +203,18 @@
             transform: translate3d(0, 0, 0);
         }
 
-        .carousel-item .title,
+        .carousel-item .title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: $gt4t-light-green;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
         .carousel-item .caption {
             color: #fff;
+            font-size: 1.1rem;
+            font-weight: 400;
         }
 
         .carousel-item .caption .text_to_html p:last-of-type {
@@ -171,22 +224,50 @@
 
     #feature {
         background-color: var(--bs-body-bg);
-        padding: 4rem 0;
+        padding: 5rem 0;
         margin-left: -15px;
         margin-right: -15px;
 
         .card {
-            border: 1px solid #e2e8f0;
+            border: none;
+            border-radius: 20px;
             background-color: var(--moove-bg-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            overflow: hidden;
+
+            &:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 40px rgba(25, 179, 92, 0.15); // GT4T middle green shadow
+                
+                .icon-lg {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .card-body {
+            padding: 2.5rem 2rem;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: $gt4t-dark-green;
         }
 
         .icon-lg {
-            width: 6rem;
-            height: 6rem;
+            width: 5rem;
+            height: 5rem;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-align: center;
+            transition: transform 0.3s ease;
+            margin-bottom: 1rem;
+            background: rgba(193, 255, 114, 0.2); // Light green subtle background
+            border-radius: 50%;
+            padding: 1rem;
 
             img {
                 max-width: 100%;
@@ -195,50 +276,68 @@
     }
 
     #numbers {
-        padding: 5.625rem 0;
+        padding: 6rem 0;
+        background: linear-gradient(to bottom, var(--bs-body-bg) 0%, var(--moove-bg-white) 100%);
 
-        .sectionheading p {
-            line-height: 1;
+        .sectionheading {
+            h2 {
+                font-weight: 800;
+                color: $gt4t-dark-green;
+                font-size: 2.5rem;
+            }
+            p {
+                line-height: 1.5;
+                font-size: 1.2rem;
+                color: rgba(5, 50, 37, 0.7);
+            }
         }
 
         .user-rating-box-area {
+            gap: 2rem;
+            
             .rate-box {
-                box-shadow: 0 6px 0 rgb(23 135 252 / 65%);
-                border-radius: 25px;
-                padding: 30px 40px 35px 40px;
+                border-radius: 24px;
+                padding: 40px;
+                transition: all 0.4s ease;
+                border: 1px solid rgba(255,255,255,0.1);
 
-                &.bg-primary {
-                    background-color: #1787fc !important;
+                &:hover {
+                    transform: translateY(-8px);
                 }
 
+                // Removed hardcoded BS blue (#1787fc) applied Middle Green instead
+                &.bg-primary {
+                    background-color: $gt4t-middle-green !important;
+                    box-shadow: 0 20px 40px rgba(25, 179, 92, 0.3);
+                }
+
+                // Removed hardcoded Dark blue (#213053) applied Dark Green instead
                 &.bg-cloudburst {
-                    background-color: #213053;
+                    background-color: $gt4t-dark-green !important;
+                    box-shadow: 0 20px 40px rgba(5, 50, 37, 0.3);
                 }
 
                 h3 {
                     color: #fff;
-                    font-size: 60px;
-                    font-weight: 600;
+                    font-size: 64px;
+                    font-weight: 800;
                     font-style: normal;
-                    letter-spacing: -1px;
-                    line-height: 66px;
-                    margin-bottom: 30px;
+                    letter-spacing: -2px;
+                    line-height: 1.1;
+                    margin-bottom: 15px;
                 }
 
                 p {
-                    color: #fff;
-                    font-size: 17px;
-                    font-weight: 400;
-                    font-style: normal;
-                    letter-spacing: normal;
-                    line-height: 30px;
+                    color: rgba(255, 255, 255, 0.9);
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 1.4;
                     margin-bottom: 0;
                 }
             }
 
             .rate-box-2 {
-                margin-top: 0;
-                box-shadow: 0 6px 0 rgb(33 48 83 / 65%);
+                margin-top: 0; // Handled by standard bootstrap column layouts
             }
         }
     }
@@ -247,6 +346,7 @@
         background-color: var(--bs-body-bg);
         margin-left: -15px;
         margin-right: -15px;
+        padding-top: 4rem;
 
         #page-content,
         #region-main {
@@ -261,32 +361,62 @@
 
         #frontpage-available-course-list {
             h2 {
-                text-align: center;;
+                text-align: center;
+                font-weight: 800;
+                color: $gt4t-dark-green;
+                margin-bottom: 3rem;
             }
         }
     }
 
     #faq {
-        padding: 4rem 0;
+        padding: 6rem 0;
 
         h2 {
             text-align: center;
+            font-weight: 800;
+            color: $gt4t-dark-green;
+            margin-bottom: 3rem;
         }
 
         .accordion {
             width: 100%;
-
-            .accordion-button:not(.collapsed) {
-                background-color: $brand-primary;
-                color: #fff;
-            }
+            max-width: 800px;
+            margin: 0 auto;
 
             .accordion-item {
-                border: var(--bs-accordion-border-width) solid $brand-primary;
+                border: none;
+                border-radius: 12px;
+                margin-bottom: 1rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                overflow: hidden;
+            }
+
+            .accordion-button {
+                font-weight: 600;
+                padding: 1.2rem 1.5rem;
+                color: $gt4t-dark-green;
+                background-color: var(--moove-bg-white);
+                
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+
+            .accordion-button:not(.collapsed) {
+                background-color: $gt4t-middle-green;
+                color: #fff;
             }
 
             .accordion-button:not(.collapsed)::after {
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M2 5L8 11L14 5'/%3e%3c/svg%3e");
+            }
+            
+            .accordion-body {
+                background-color: var(--moove-bg-white);
+                color: var(--bs-body-color);
+                padding: 1.5rem;
+                line-height: 1.6;
             }
         }
     }
@@ -298,8 +428,8 @@
         width: 100% !important;
         max-width: 100% !important;
         margin: 1rem 0;
-        -webkit-box-shadow: none;
-        box-shadow: none;
+        -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.05); // Kept slight shadow on mobile
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
     #page-site-index.notloggedin {
