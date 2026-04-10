@@ -1,22 +1,25 @@
+// ============================================================
+// GT4T Footer Styles
+// Dark green footer matching gt4t.intelligent-industry.fi
+// ============================================================
+
 #page-footer {
-    background-color: #282829;
+    background-color: $gt4t-dark-green;
     color: #fff;
 
     a:not(.btn) {
-        color: #fff;
+        color: rgba(255, 255, 255, 0.8);
+        &:hover { color: $gt4t-light-green; }
     }
 
     .contactsitesupport {
-        border: 1px solid #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
         color: #fff;
     }
 
     .popover.footer .popover-body .footer-section {
         color: #1d2125;
-
-        a {
-            color: #1d2125;
-        }
+        a { color: #1d2125; }
     }
 
     .footer-columns {
@@ -39,10 +42,8 @@
 
         ul {
             padding-left: 0;
-
             li {
                 display: inline;
-
                 a {
                     text-decoration: none;
                     color: #fff;
@@ -50,108 +51,19 @@
                     height: 38px;
                     padding: 0.6rem 0.75rem;
 
-                    &.btn-rounded {
-                        border-radius: 50%;
-                    }
-
-                    &.website {
-                        background-color: $brand-primary;
-                        &:hover {
-                            background-color: darken($brand-primary, 20%);
-                        }
-                    }
-
-                    &.mobile {
-                        background-color: $brand-primary;
-                        &:hover {
-                            background-color: darken($brand-primary, 20%);
-                        }
-                    }
-
-                    &.mail {
-                        background-color: $brand-primary;
-                        &:hover {
-                            background-color: darken($brand-primary, 20%);
-                        }
-                    }
-
-                    &.facebook {
-                        background-color: $facebook-color;
-                        &:hover {
-                            background-color: darken($facebook-color, 20%);
-                        }
-                    }
-
-                    &.twitter {
-                        background-color: $twitter-color;
-                        &:hover {
-                            background-color: darken($twitter-color, 20%);
-                        }
-                    }
-
-                    &.linkedin {
-                        background-color: $linkedin-color;
-                        &:hover {
-                            background-color: darken($linkedin-color, 20%);
-                        }
-                    }
-
-                    &.youtube {
-                        background-color: $youtube-color;
-                        &:hover {
-                            background-color: darken($youtube-color, 20%);
-                        }
-                    }
-
-                    &.instagram {
-                        background-color: $instagram-color;
-                        &:hover {
-                            background-color: darken($instagram-color, 20%);
-                        }
-                    }
-
-                    &.whatsapp {
-                        background-color: $whatsapp-color;
-                        &:hover {
-                            background-color: darken($whatsapp-color, 20%);
-                        }
-                    }
-
-                    &.telegram {
-                        background-color: $telegram-color;
-
-                        &:hover {
-                            background-color: darken($telegram-color, 20%);
-                        }
-
-                        .fa {
-                            margin-left: -1px;
-                        }
-                    }
-
-                    &.tiktok {
-                        background-color: $tiktok-color;
-
-                        &:hover {
-                            background-color: darken($tiktok-color, 20%);
-                        }
-
-                        .fa {
-                            margin-left: -1px;
-                        }
-                    }
-
-                    &.pinterest {
-                        background-color: $pinterest-color;
-
-                        &:hover {
-                            background-color: darken($pinterest-color, 20%);
-                        }
-
-                        .fa {
-                            margin-left: -1px;
-                        }
-                    }
+                    &.btn-rounded { border-radius: 50%; }
+                    &.website { background-color: $brand-primary; &:hover { background-color: darken($brand-primary, 20%); } }
+                    &.mobile { background-color: $brand-primary; &:hover { background-color: darken($brand-primary, 20%); } }
+                    &.mail { background-color: $brand-primary; &:hover { background-color: darken($brand-primary, 20%); } }
+                    &.facebook { background-color: $facebook-color; &:hover { background-color: darken($facebook-color, 20%); } }
+                    &.twitter { background-color: $twitter-color; &:hover { background-color: darken($twitter-color, 20%); } }
+                    &.linkedin { background-color: $linkedin-color; &:hover { background-color: darken($linkedin-color, 20%); } }
+                    &.youtube { background-color: $youtube-color; &:hover { background-color: darken($youtube-color, 20%); } }
+                    &.instagram { background-color: $instagram-color; &:hover { background-color: darken($instagram-color, 20%); } }
+                    &.whatsapp { background-color: $whatsapp-color; &:hover { background-color: darken($whatsapp-color, 20%); } }
+                    &.telegram { background-color: $telegram-color; &:hover { background-color: darken($telegram-color, 20%); } .fa { margin-left: -1px; } }
+                    &.tiktok { background-color: $tiktok-color; &:hover { background-color: lighten($tiktok-color, 20%); } .fa { margin-left: -1px; } }
+                    &.pinterest { background-color: $pinterest-color; &:hover { background-color: darken($pinterest-color, 20%); } .fa { margin-left: -1px; } }
                 }
             }
         }
@@ -159,7 +71,7 @@
 
     .supportemail,
     .logininfo,
-    .tool_dataprivacy{
+    .tool_dataprivacy {
         margin: .5rem 0;
     }
 
@@ -169,31 +81,22 @@
 
     .column-right {
         text-align: right;
-
         .stores {
-            a {
-                display: block;
-            }
-
-            img {
-                max-width: 160px;
-            }
+            a { display: block; }
+            img { max-width: 160px; }
         }
     }
 
     .copyright {
-        background-color: $moodle-color;
+        background-color: darken($gt4t-dark-green, 3%);
         text-align: center;
         min-height: inherit;
-        color: #fff;
+        color: rgba(255, 255, 255, 0.6);
         margin-bottom: 0;
 
         .madeby {
             padding: .5rem 0;
-
-            p {
-                margin-bottom: 0;
-            }
+            p { margin-bottom: 0; }
         }
     }
 
@@ -203,6 +106,159 @@
 
     .btn-footer-communication {
         bottom: 4rem;
+    }
+}
+
+// ────────────────────────────────────────────────────────────
+// GT4T Footer Layout
+// ────────────────────────────────────────────────────────────
+.gt4t-footer {
+    background-color: $gt4t-dark-green !important;
+
+    &__main {
+        padding: 3rem 0 2rem;
+    }
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    &__logo {
+        margin-bottom: 1.5rem;
+
+        img {
+            max-height: 50px;
+            width: auto;
+        }
+
+        .dark { display: none; }
+    }
+
+    &__sitename {
+        font-family: $gt4t-font-display;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+    }
+
+    &__description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+        max-width: 400px;
+    }
+
+    &__social {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__social-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        background-color: $gt4t-mid-green;
+        color: #fff !important;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+
+        &:hover {
+            background-color: $gt4t-light-green;
+            color: $gt4t-dark-green !important;
+            transform: translateY(-2px);
+        }
+
+        .fa, i {
+            color: inherit !important;
+            filter: none !important;
+        }
+    }
+
+    &__copyright {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 1rem;
+    }
+
+    &__right {
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 3rem;
+    }
+
+    &__disclaimer {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+    }
+
+    &__partner-logos {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    &__partner-logo {
+        height: 36px;
+        width: auto;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+        &:hover { opacity: 1; }
+    }
+
+    &__moodle-info {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+
+        a { color: rgba(255, 255, 255, 0.6) !important; }
+    }
+}
+
+body[data-bs-theme="dark"] {
+    .gt4t-footer__logo {
+        .light { display: none; }
+        .dark { display: block; }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .gt4t-footer {
+        &__grid {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        &__description {
+            max-width: 100%;
+        }
+
+        &__social {
+            justify-content: center;
+        }
+
+        &__right {
+            border-left: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-left: 0;
+            padding-top: 2rem;
+        }
     }
 }
 
@@ -219,4 +275,3 @@
         }
     }
 }
-

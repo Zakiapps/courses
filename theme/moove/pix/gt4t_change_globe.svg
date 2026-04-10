@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="globe" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0%" stop-color="#19B35C"/>
+      <stop offset="50%" stop-color="#006D77"/>
+      <stop offset="100%" stop-color="#053225"/>
+    </linearGradient>
+    <linearGradient id="land1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C1FF72"/>
+      <stop offset="100%" stop-color="#19B35C"/>
+    </linearGradient>
+    <linearGradient id="land2" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#00D4D4"/>
+      <stop offset="100%" stop-color="#19B35C"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="0.35" cy="0.3" r="0.5">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.25)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </radialGradient>
+    <clipPath id="globeClip">
+      <circle cx="200" cy="200" r="140"/>
+    </clipPath>
+    <filter id="gw">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feComposite in="SourceGraphic" in2="b" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Globe base -->
+  <circle cx="200" cy="200" r="140" fill="url(#globe)"/>
+  <g clip-path="url(#globeClip)">
+    <!-- Europe-like landmass -->
+    <path d="M170,110 Q185,100 200,105 Q220,95 235,110 Q245,125 240,140 Q250,155 245,170 Q235,175 225,165 Q215,175 200,170 Q190,180 175,175 Q160,170 155,155 Q150,140 160,125Z" fill="url(#land1)" opacity="0.8"/>
+    <!-- Africa-like landmass -->
+    <path d="M180,185 Q195,180 210,190 Q220,200 225,220 Q230,245 220,270 Q210,285 195,290 Q180,285 175,265 Q165,240 170,215 Q172,195 180,185Z" fill="url(#land1)" opacity="0.7"/>
+    <!-- Americas-like landmass -->
+    <path d="M110,130 Q120,115 135,120 Q145,130 140,150 Q145,165 140,180 Q130,200 125,220 Q115,245 120,260 Q130,275 125,290 Q110,280 105,260 Q95,235 100,210 Q95,185 100,165 Q100,145 110,130Z" fill="url(#land2)" opacity="0.65"/>
+    <!-- Asia-like landmass -->
+    <path d="M260,120 Q280,110 300,120 Q315,135 310,155 Q320,170 310,185 Q295,195 280,185 Q265,180 255,165 Q245,145 260,120Z" fill="url(#land2)" opacity="0.6"/>
+    <!-- Grid lines -->
+    <g stroke="rgba(193,255,114,0.15)" stroke-width="0.8" fill="none">
+      <ellipse cx="200" cy="200" rx="140" ry="50"/>
+      <ellipse cx="200" cy="200" rx="140" ry="100"/>
+      <ellipse cx="200" cy="200" rx="50" ry="140" transform="rotate(0,200,200)"/>
+      <ellipse cx="200" cy="200" rx="100" ry="140" transform="rotate(0,200,200)"/>
+      <line x1="60" y1="200" x2="340" y2="200"/>
+      <line x1="200" y1="60" x2="200" y2="340"/>
+    </g>
+    <!-- Shine -->
+    <circle cx="200" cy="200" r="140" fill="url(#shine)"/>
+  </g>
+  <!-- Orbit ring -->
+  <ellipse cx="200" cy="200" rx="165" ry="55" transform="rotate(-25,200,200)" stroke="#C1FF72" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="6,4"/>
+  <!-- Connection dots on orbit -->
+  <circle cx="100" cy="155" r="5" fill="#C1FF72" opacity="0.8" filter="url(#gw)"/>
+  <circle cx="310" cy="235" r="5" fill="#C1FF72" opacity="0.8" filter="url(#gw)"/>
+  <circle cx="230" cy="100" r="4" fill="#00D4D4" opacity="0.7" filter="url(#gw)"/>
+  <!-- People/connection icons around globe -->
+  <g opacity="0.7">
+    <!-- Person top -->
+    <circle cx="200" cy="45" r="8" fill="#C1FF72"/>
+    <path d="M190,55 Q200,65 210,55" stroke="#C1FF72" stroke-width="2" fill="none"/>
+    <!-- Person left -->
+    <circle cx="45" cy="220" r="8" fill="#00D4D4"/>
+    <path d="M35,230 Q45,240 55,230" stroke="#00D4D4" stroke-width="2" fill="none"/>
+    <!-- Person right -->
+    <circle cx="355" cy="180" r="8" fill="#19B35C"/>
+    <path d="M345,190 Q355,200 365,190" stroke="#19B35C" stroke-width="2" fill="none"/>
+    <!-- Person bottom -->
+    <circle cx="180" cy="365" r="7" fill="#C1FF72"/>
+    <path d="M171,374 Q180,382 189,374" stroke="#C1FF72" stroke-width="2" fill="none"/>
+  </g>
+  <!-- Connection lines to people -->
+  <g stroke-width="1" opacity="0.3" stroke-dasharray="4,3">
+    <line x1="200" y1="60" x2="200" y2="55" stroke="#C1FF72"/>
+    <line x1="60" y1="200" x2="53" y2="220" stroke="#00D4D4"/>
+    <line x1="340" y1="200" x2="347" y2="180" stroke="#19B35C"/>
+    <line x1="200" y1="340" x2="180" y2="358" stroke="#C1FF72"/>
+  </g>
+  <!-- Leaf accent -->
+  <g transform="translate(315,85) rotate(30) scale(0.5)" opacity="0.6">
+    <path d="M0,0 Q-20,-15 -15,-40 Q-10,-55 5,-50 Q15,-40 10,-20Z" fill="#C1FF72"/>
+    <path d="M0,0 Q-5,-20 -5,-35" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none"/>
+  </g>
+  <g transform="translate(70,310) rotate(-20) scale(0.4)" opacity="0.5">
+    <path d="M0,0 Q-20,-15 -15,-40 Q-10,-55 5,-50 Q15,-40 10,-20Z" fill="#19B35C"/>
+  </g>
+</svg>

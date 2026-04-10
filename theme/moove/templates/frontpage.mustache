@@ -15,43 +15,17 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template theme_moove/drawers
+    @template theme_moove/frontpage
 
-    Boost drawer template.
-
-    Context variables required for this template:
-    * sitename - The name of the site
-    * output - The core renderer for the page
-    * bodyattributes - attributes for the body tag as a string of html attributes
-    * sidepreblocks - HTML for the blocks
-    * hasblocks - true if there are blocks on this page
-    * courseindexopen - true if the nav drawer should be open on page load
-    * regionmainsettingsmenu - HTML for the region main settings menu
-    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
-
-    Example context (json):
-    {
-        "sitename": "Moodle",
-        "output": {
-            "doctype": "<!DOCTYPE html>",
-            "page_title": "Test page",
-            "favicon": "favicon.ico",
-            "main_content": "<h1>Headings make html validators happier</h1>"
-         },
-        "bodyattributes":"",
-        "sidepreblocks": "<h2>Blocks html goes here</h2>",
-        "hasblocks":true,
-        "courseindexopen": true,
-        "navdraweropen": false,
-        "blockdraweropen": true,
-        "regionmainsettingsmenu": "",
-        "hasregionmainsettingsmenu": false,
-        "addblockbutton": ""
-    }
+    GT4T frontpage – matches gt4t.intelligent-industry.fi
 }}
 {{> theme_boost/head }}
 
 <body {{{ bodyattributes }}}>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 {{> core/local/toast/wrapper}}
 <div id="page-wrapper" class="d-print-block">
 
@@ -59,145 +33,169 @@
 
     {{> theme_moove/navbar }}
 
-    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container bg-white">
-        {{#slidercount}}
-            <div id="mooveslideshow" class="container-fluid">
-                <div id="moove-carousel" class="carousel slide">
-                    {{^slidersingleslide}}
-                        <div class="carousel-indicators">
-                            {{#slides}}
-                                <button type="button" data-bs-target="#moove-carousel" data-bs-slide-to="{{{ key }}}" {{#active}}class="active" aria-current="true"{{/active}}  aria-label="{{slidertitle}}"></button>
-                            {{/slides}}
-                        </div>
-                    {{/slidersingleslide}}
-                    <div class="carousel-inner">
-                        {{#slides}}
-                            <div class="carousel-item {{#active}}active{{/active}}">
-                                <img src="{{image}}" alt="{{slidertitle}}" class="d-block w-100">
-                                {{#hascaption}}
-                                    <div class="carousel-caption d-none d-md-block">
-                                        {{#title}}
-                                            <h5 class="title">{{.}}</h5>
-                                        {{/title}}
-                                        {{#caption}}
-                                            <div class="caption">
-                                                {{{.}}}
-                                            </div>
-                                        {{/caption}}
-                                    </div>
-                                {{/hascaption}}
-                            </div>
-                        {{/slides}}
-                    </div>
-                    {{^slidersingleslide}}
-                        <button class="carousel-control-prev" type="button" data-bs-target="#moove-carousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">{{#str}}previous{{/str}}</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#moove-carousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">{{#str}}next{{/str}}</span>
-                        </button>
-                    {{/slidersingleslide}}
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container">
+
+        {{! ═══ HERO ═══ }}
+        {{#gt4t_hero}}
+        <section style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;overflow:hidden;background:linear-gradient(160deg,rgba(5,50,37,.95) 0%,rgba(5,50,37,.8) 35%,rgba(10,80,50,.7) 60%,rgba(25,179,92,.5) 100%),linear-gradient(to bottom right,#053225,#19B35C)">
+            <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 55% 40%,rgba(25,179,92,.12) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(193,255,114,.06) 0%,transparent 50%);pointer-events:none"></div>
+            <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap">
+                <div style="flex:1;min-width:300px;max-width:650px">
+                    <h1 style="font-family:'Work Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.1;color:#fff;margin-bottom:1.5rem;letter-spacing:-.02em">{{{heading}}}</h1>
+                    <p style="font-family:'Work Sans',sans-serif;font-weight:400;font-size:clamp(1rem,1.5vw,1.25rem);line-height:1.6;color:rgba(255,255,255,.9);margin-bottom:2rem;max-width:550px">{{{subtitle}}}</p>
+                    <a href="{{{cta_url}}}" style="display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;border:none;background:#19B35C;color:#fff">{{{cta_text}}}</a>
+                </div>
+                <div class="gt4t-hero-img-wrap" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center">
+                    <img src="{{wwwroot}}/theme/moove/pix/gt4t_hero_clover.svg" alt="GT4T" style="width:clamp(200px,22vw,340px);height:auto;filter:drop-shadow(0 8px 24px rgba(0,0,0,.2));animation:gt4tFloat 6s ease-in-out infinite">
                 </div>
             </div>
-        {{/slidercount}}
+            <div style="position:absolute;bottom:5rem;left:50%;transform:translateX(-50%);cursor:pointer;z-index:3;opacity:.7" class="gt4t-hero__scroll">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div style="position:absolute;bottom:0;left:0;width:100%;z-index:2;line-height:0">
+                <svg viewBox="0 0 1440 200" preserveAspectRatio="none" style="width:100%;height:160px;display:block" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,200 L0,120 Q120,20 300,80 Q500,150 720,60 Q900,-10 1080,50 Q1260,110 1440,40 L1440,200 Z" fill="#19B35C" opacity="0.6"/>
+                    <path d="M0,200 L0,140 Q200,60 400,100 Q600,160 800,80 Q1000,10 1200,70 Q1350,110 1440,80 L1440,200 Z" fill="#C1FF72" opacity="0.8"/>
+                    <path d="M0,200 L0,160 Q150,110 350,140 Q550,180 750,120 Q950,60 1150,100 Q1300,130 1440,100 L1440,200 Z" fill="#C1FF72"/>
+                </svg>
+            </div>
+        </section>
+        {{/gt4t_hero}}
 
-        {{#displaymarketingbox}}
-            <section id="feature">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 my-3">
-                            <h3 class="h1 mt-3 mb-3">{{{marketingheading}}}</h3>
-                            <div class="marketing-content">{{{marketingcontent}}}</div>
-                        </div>
-                        <div class="col-lg-8 ps-xl-8">
-                            <div class="row">
-                                {{#marketingboxes}}
-                                    <div class="col-sm-6 mt-4">
-                                        <div class="card card-body shadow">
-                                            <div class="d-flex">
-                                                <div class="icon-lg text-white rounded-circle">
-                                                    <img src="{{{icon}}}">
-                                                </div>
-                                                <div class="col ps-3">
-                                                    <h5>{{{heading}}}</h5>
-                                                    <div class="box-content">{{{content}}}</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {{/marketingboxes}}
-                            </div>
+        {{! ═══ EDUCATION ═══ }}
+        {{#gt4t_education}}
+        <section style="background:linear-gradient(180deg,#C1FF72 0%,#d4ff8e 40%,#e8ffbe 100%);padding:5rem 0;color:#0D0D0D">
+            <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+                <h2 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#0D0D0D;margin-bottom:1.5rem">{{{heading}}}</h2>
+                <p style="font-size:1rem;line-height:1.7;color:#0D0D0D;margin-bottom:1rem;max-width:900px">{{{text1}}}</p>
+                <p style="font-size:1rem;line-height:1.7;color:#0D0D0D;margin-bottom:1rem;max-width:900px">{{{text2}}}</p>
+            </div>
+            <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+                <div style="display:flex;gap:1.5rem;margin-top:3rem;justify-content:center;flex-wrap:wrap">
+                    {{#gt4t_stats}}
+                    <div style="flex:1;min-width:240px;max-width:300px">
+                        <div style="color:#fff;padding:2.5rem 1.5rem;border-radius:12px;transform:skewX(-4deg);min-height:220px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.15);background:linear-gradient(135deg,rgba(5,50,37,.8),rgba(25,80,50,.65)),linear-gradient(to bottom right,#2d6a4f,#1b4332)">
+                            <span style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:2.5rem;display:block;margin-bottom:.75rem;color:#fff;transform:skewX(4deg);text-shadow:0 2px 8px rgba(0,0,0,.3)">{{{number}}}</span>
+                            <span style="font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;line-height:1.4;transform:skewX(4deg);display:block;text-shadow:0 1px 4px rgba(0,0,0,.2)">{{{label}}}</span>
                         </div>
                     </div>
+                    {{/gt4t_stats}}
                 </div>
-            </section>
-        {{/displaymarketingbox}}
+            </div>
+        </section>
+        {{/gt4t_education}}
 
-        {{#numbersfrontpage}}
-            <section id="numbers">
-                <div class="moove-container-fluid">
-                    <div class="row customer-area-l1 justify-content-center align-items-center ">
-                        <div class="col-xl-5 col-lg-5 col-md-10">
-                            <div class="sectionheading">
-                                {{{numberscontent}}}
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-7 col-md-10 offset-xl-1">
-                            <div class="row user-rating-box-area">
-                                <div class="col-sm-6 col-xs-8">
-                                    <div class="h-100 rate-box bg-primary">
-                                        <h3>
-                                            {{{numbersusers}}}
-                                        </h3>
-                                        <p>{{#str}}numbersusers, theme_moove{{/str}}</p>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-xs-8">
-                                    <div class="h-100 rate-box rate-box-2 bg-cloudburst">
-                                        <h3>
-                                            {{{numberscourses}}}
-                                        </h3>
-                                        <p>{{#str}}numberscourses, theme_moove{{/str}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        {{! ═══ DOMAINS ═══ }}
+        {{#gt4t_domains}}
+        <section style="background:#fff;padding:5rem 0">
+            <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+                <h2 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#0D0D0D;margin-bottom:1rem">{{{heading}}}</h2>
+                <p style="font-size:1rem;line-height:1.6;color:#555;margin-bottom:3rem;max-width:700px">{{{subtitle}}}</p>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem">
+                    {{#items}}
+                    <div>
+                        <div style="height:8px;border-radius:4px;margin-bottom:1.5rem;background:{{#color_hex}}{{{color_hex}}}{{/color_hex}}{{^color_hex}}#19B35C{{/color_hex}}"></div>
+                        <h3 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:1.25rem;color:#0D0D0D;margin-bottom:.75rem">{{{title}}}</h3>
+                        <p style="font-size:.95rem;line-height:1.6;color:#555">{{{description}}}</p>
+                    </div>
+                    {{/items}}
+                </div>
+            </div>
+        </section>
+        {{/gt4t_domains}}
+
+        {{! ═══ INNOVATORS ═══ }}
+        {{#gt4t_innovators}}
+        <section style="background:#00D4D4;color:#0D0D0D;padding:5rem 0;position:relative;overflow:hidden">
+            <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+                    <div>
+                        <h2 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#053225;margin-bottom:1.5rem">{{{heading}}}</h2>
+                        <p style="font-size:1rem;line-height:1.7;color:#0D0D0D;margin-bottom:1rem">{{{text1}}}</p>
+                        <p style="font-size:1rem;line-height:1.7;color:#0D0D0D;margin-bottom:1rem">{{{text2}}}</p>
+                        <a href="{{{cta_url}}}" style="display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;background:#19B35C;color:#fff">{{{cta_text}}}</a>
+                    </div>
+                    <div style="display:flex;justify-content:center;align-items:center">
+                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_europe_map.svg" alt="European innovation network" style="width:100%;max-width:450px">
                     </div>
                 </div>
-            </section>
-        {{/numbersfrontpage}}
+            </div>
+        </section>
+        {{/gt4t_innovators}}
 
-        <div id="topofscroll">
-            <div id="page-content" class="d-print-block main-inner">
-                <div id="region-main-box">
-                    <section id="region-main" aria-label="{{#str}}content{{/str}}">
-                        {{{ output.course_content_header }}}
-                        {{{ output.main_content }}}
-                        {{{ output.course_content_footer }}}
+        {{! ═══ CHANGE ═══ }}
+        {{#gt4t_change}}
+        <section style="background:#00D4D4;padding:5rem 0;position:relative;overflow:hidden;color:#0D0D0D">
+            <div style="position:absolute;border-radius:50%;width:450px;height:450px;background:#19B35C;left:-80px;bottom:-120px;opacity:.75"></div>
+            <div style="position:absolute;border-radius:50%;width:280px;height:280px;background:#C1FF72;left:120px;bottom:-30px;opacity:.55"></div>
+            <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1">
+                    <div style="display:flex;justify-content:center;align-items:center">
+                        <div style="width:320px;height:320px;border-radius:50%;border:8px solid #C1FF72;background:linear-gradient(160deg,#1a1a3e 0%,#0d2b4a 40%,#006D77 100%);box-shadow:0 8px 30px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;overflow:hidden">
+                            <img src="{{wwwroot}}/theme/moove/pix/gt4t_change_globe.svg" alt="Global collaboration" style="width:85%;height:85%;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))">
+                        </div>
+                    </div>
+                    <div>
+                        <h2 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2rem);color:#053225;margin-bottom:1rem">{{{heading}}}</h2>
+                        <p style="font-size:.95rem;line-height:1.7;color:#0D0D0D;margin-bottom:1.5rem">{{{text}}}</p>
+                        <a href="{{{cta_url}}}" style="display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;background:#053225;color:#fff">{{{cta_text}}}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{/gt4t_change}}
+
+        {{! ═══ MOVEMENT ═══ }}
+        {{#gt4t_movement}}
+        <section style="background:#fff;padding:4rem 0 5rem">
+            <div style="max-width:1200px;margin:0 auto;padding:0 2rem;text-align:center">
+                <div style="position:relative;display:inline-block;margin-bottom:1rem">
+                    <div style="position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:350px;height:180px;pointer-events:none;z-index:1">
+                        <div style="position:absolute;width:200px;height:80px;bottom:20px;left:50%;transform:translateX(-50%);border-radius:40px;background:radial-gradient(ellipse,rgba(190,190,190,.35) 0%,transparent 70%)"></div>
+                        <div style="position:absolute;width:260px;height:100px;bottom:0;left:50%;transform:translateX(-50%);border-radius:50px;background:radial-gradient(ellipse,rgba(210,210,210,.3) 0%,transparent 65%)"></div>
+                        <div style="position:absolute;width:320px;height:120px;bottom:-20px;left:50%;transform:translateX(-50%);border-radius:60px;background:radial-gradient(ellipse,rgba(220,220,220,.25) 0%,transparent 60%)"></div>
+                    </div>
+                    <div style="position:relative;z-index:2">
+                        <img src="{{wwwroot}}/theme/moove/pix/gt4t_rocket.svg" alt="" aria-hidden="true" style="width:140px;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))">
+                    </div>
+                </div>
+                <h2 style="font-family:'Work Sans',sans-serif;font-weight:700;font-size:clamp(1.5rem,3vw,2.2rem);color:#053225;margin-bottom:.75rem">{{{heading}}}</h2>
+                <p style="font-size:1.1rem;color:#555;margin-bottom:2rem">{{{subtitle}}}</p>
+                <a href="{{{cta_url}}}" style="display:inline-block;padding:.75rem 2rem;border-radius:6px;font-family:'Work Sans',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none;background:#19B35C;color:#fff">{{{cta_text}}}</a>
+            </div>
+        </section>
+        {{/gt4t_movement}}
+
+        {{! ═══ MOODLE CONTENT (Available Courses) ═══ }}
+        <div id="topofscroll" style="background:#FAFAFA !important;color:#0D0D0D !important">
+            <div id="page-content" class="d-print-block main-inner" style="padding:2rem 0;background:#FAFAFA !important;color:#0D0D0D !important">
+                <div id="region-main-box" style="background:#FAFAFA !important;color:#0D0D0D !important">
+                    <section id="region-main" aria-label="{{#str}}content{{/str}}" style="background:#FAFAFA !important;color:#0D0D0D !important;padding:1rem 2rem">
+                        <div style="max-width:1200px;margin:0 auto">
+                            {{{ output.course_content_header }}}
+                            {{{ output.main_content }}}
+                            {{{ output.course_content_footer }}}
+                        </div>
                     </section>
                 </div>
             </div>
         </div>
 
+        {{! FAQ }}
         {{#faqenabled}}
-            <section id="faq" class="scale-up scale-up-show">
-                <div class="moove-container-fluid">
-                    <h2>{{#str}}faq, theme_moove{{/str}}</h2>
-
-                    <div class="accordion" id="accordion-faq">
+            <section id="faq" style="padding:4rem 0;background:#FAFAFA !important;color:#0D0D0D !important">
+                <div style="max-width:1200px;margin:0 auto;padding:0 2rem">
+                    <h2 style="text-align:center;font-family:'Work Sans',sans-serif;font-weight:700;margin-bottom:2rem;color:#053225 !important">{{#str}}faq, theme_moove{{/str}}</h2>
+                    <div class="accordion" id="accordion-faq" style="max-width:900px;margin:0 auto">
                         {{#faq}}
-                            <div class="accordion-item mb-1">
+                            <div class="accordion-item mb-1" style="background:#fff !important;border:1px solid #19B35C !important">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button {{^active}}collapsed{{/active}}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{{id}}}" aria-expanded="true" aria-controls="collapse-{{{id}}}">
+                                    <button class="accordion-button {{^active}}collapsed{{/active}}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{{id}}}" aria-expanded="true" aria-controls="collapse-{{{id}}}" style="background:#fff !important;color:#053225 !important;font-family:'Work Sans',sans-serif;font-weight:600">
                                         {{{question}}}
                                     </button>
                                 </h2>
                                 <div id="collapse-{{{id}}}" class="accordion-collapse collapse {{#active}}show{{/active}}" data-bs-parent="#accordion-faq">
-                                    <div class="accordion-body">
-                                        {{{answer}}}
-                                    </div>
+                                    <div class="accordion-body" style="background:#fff !important;color:#0D0D0D !important;font-family:'Work Sans',sans-serif">{{{answer}}}</div>
                                 </div>
                             </div>
                         {{/faq}}
@@ -206,11 +204,11 @@
             </section>
         {{/faqenabled}}
     </div>
+
     {{> theme_moove/footer }}
 
     {{{ output.standard_after_main_region_html }}}
 </div>
-
 
 </body>
 </html>
@@ -221,18 +219,60 @@
         M.util.js_complete('theme_boost/loader');
     });
     require(['jquery'], function($) {
-        $('.carousel').carousel({
-            interval: 5000
-        });
-
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.setAttribute('data-bs-theme', 'dark');
         }
-
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-            const newColorScheme = event.matches ? "dark" : "light";
-
-            document.body.setAttribute('data-bs-theme', newColorScheme);
+            document.body.setAttribute('data-bs-theme', event.matches ? "dark" : "light");
         });
+        $('.gt4t-hero__scroll').on('click', function() {
+            $('html, body').animate({ scrollTop: $('.gt4t-education').offset().top - 70 }, 800);
+        });
+
+        var gt4tCSS = document.createElement('style');
+        gt4tCSS.textContent = ''
+            + '@keyframes gt4tFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }'
+            + '@media (max-width: 768px) { .gt4t-hero-img-wrap { display: none !important; } }'
+            + '#topofscroll { background: #FAFAFA !important; color: #0D0D0D !important; overflow: hidden !important; }'
+            + '#topofscroll #page-content { background: #FAFAFA !important; color: #0D0D0D !important; padding: 3rem 0 !important; margin: 0 !important; }'
+            + '#topofscroll #region-main-box { background: #FAFAFA !important; color: #0D0D0D !important; margin: 0 !important; padding: 0 !important; }'
+            + '#topofscroll #region-main { background: #FAFAFA !important; color: #0D0D0D !important; max-width: 1100px !important; margin: 0 auto !important; padding: 0 2rem !important; box-sizing: border-box !important; overflow: hidden !important; }'
+            + '#topofscroll #frontpage-available-course-list { max-width: 100% !important; overflow: hidden !important; }'
+            + '#topofscroll #frontpage-available-course-list h2 { color: #053225 !important; font-family: "Work Sans",sans-serif !important; font-weight: 700 !important; text-align: center !important; margin-bottom: 2rem !important; }'
+            + '#frontpage-available-course-list .courses, #frontpage-course-list-all .courses {'
+            + '  display: flex !important; flex-wrap: wrap !important; gap: 1.5rem !important; justify-content: center !important;'
+            + '  max-width: 100% !important; margin: 0 !important; padding: 0 !important;'
+            + '}'
+            + '#topofscroll .coursebox {'
+            + '  background: #fff !important; color: #0D0D0D !important;'
+            + '  border: 1px solid #e0e0e0 !important; border-left: 4px solid #19B35C !important;'
+            + '  border-radius: 12px !important; box-shadow: 0 2px 8px rgba(0,0,0,.06) !important;'
+            + '  transition: box-shadow .2s, transform .2s !important;'
+            + '  flex: 0 1 calc(50% - 1rem) !important; max-width: calc(50% - 1rem) !important;'
+            + '  box-sizing: border-box !important; padding: 1rem !important; margin: 0 !important;'
+            + '  overflow: hidden !important;'
+            + '}'
+            + '@media (max-width: 768px) { #topofscroll .coursebox { flex: 0 1 100% !important; max-width: 100% !important; } }'
+            + '#topofscroll .coursebox:hover { box-shadow: 0 6px 20px rgba(25,179,92,.15) !important; transform: translateY(-2px) !important; }'
+            + '#topofscroll .coursebox .info, #topofscroll .coursebox .content { max-width: 100% !important; overflow: hidden !important; }'
+            + '#topofscroll .coursebox h3, #topofscroll .coursebox h3 a, #topofscroll .coursename, #topofscroll .coursename a {'
+            + '  color: #058101 !important; font-family: "Work Sans",sans-serif !important; font-weight: 600 !important; font-size: 1.1rem !important;'
+            + '}'
+            + '#topofscroll .coursebox .summary, #topofscroll .coursebox .content .summary,'
+            + '#topofscroll .coursebox p, #topofscroll .coursebox .card-text {'
+            + '  color: #444 !important; font-family: "Work Sans",sans-serif !important; font-size: .9rem !important; line-height: 1.6 !important;'
+            + '}'
+            + '#topofscroll .coursebox .teachers, #topofscroll .coursebox .teachers span,'
+            + '#topofscroll .coursebox .teachers a { color: #058101 !important; font-family: "Work Sans",sans-serif !important; font-weight: 500 !important; }'
+            + '#topofscroll .coursebox .coursebtn, #topofscroll .coursebox .categoryname, #topofscroll .badge {'
+            + '  background: #C1FF72 !important; color: #053225 !important; border-radius: 4px !important; padding: 3px 10px !important; font-weight: 600 !important; font-size: .8rem !important;'
+            + '}'
+            + '#topofscroll .coursebox .courseimage img, #topofscroll .coursebox img { max-width: 100% !important; height: auto !important; border-radius: 8px !important; }'
+            + '#faq { background: #FAFAFA !important; color: #0D0D0D !important; }'
+            + '#faq .accordion-item { background: #fff !important; border: 1px solid #19B35C !important; }'
+            + '#faq .accordion-button { background: #fff !important; color: #053225 !important; font-family: "Work Sans",sans-serif !important; font-weight: 600 !important; }'
+            + '#faq .accordion-button:not(.collapsed) { background: #19B35C !important; color: #fff !important; }'
+            + '#faq .accordion-body { background: #fff !important; color: #0D0D0D !important; }';
+        document.head.appendChild(gt4tCSS);
     });
 {{/js}}

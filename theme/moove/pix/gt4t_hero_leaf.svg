@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" fill="none">
+  <defs>
+    <linearGradient id="leaf1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2ecc71"/>
+      <stop offset="100%" stop-color="#0a5c36"/>
+    </linearGradient>
+    <linearGradient id="leaf2" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#27ae60"/>
+      <stop offset="100%" stop-color="#145a32"/>
+    </linearGradient>
+    <linearGradient id="leaf3" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#1abc9c"/>
+      <stop offset="100%" stop-color="#0e6251"/>
+    </linearGradient>
+    <linearGradient id="stem" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#229954"/>
+      <stop offset="100%" stop-color="#145a32"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  <!-- Stem -->
+  <path d="M400 900 Q395 700 390 550 Q385 480 400 420" stroke="url(#stem)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- Main leaf (large, left) -->
+  <path d="M400 420 Q300 350 250 200 Q230 130 280 80 Q350 10 400 60 Q410 70 400 150 Q395 250 400 420Z" fill="url(#leaf1)" opacity="0.95" filter="url(#glow)"/>
+  <path d="M400 420 Q390 300 350 180 Q340 140 370 100" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <!-- Main leaf vein -->
+  <path d="M400 420 Q395 350 380 280 Q370 220 350 160 Q340 120 350 90" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
+  <!-- Secondary leaf (large, right) -->
+  <path d="M400 450 Q500 380 560 240 Q580 170 540 110 Q490 40 440 80 Q420 100 420 180 Q415 300 400 450Z" fill="url(#leaf2)" opacity="0.9" filter="url(#glow)"/>
+  <path d="M400 450 Q430 340 480 230 Q500 180 510 130" stroke="#fff" stroke-width="1.5" fill="none" opacity="0.25"/>
+  <!-- Smaller leaf (front, center-left) -->
+  <path d="M395 480 Q340 420 310 320 Q295 260 320 210 Q360 160 385 200 Q400 230 400 310 Q398 400 395 480Z" fill="url(#leaf3)" opacity="0.85"/>
+  <path d="M395 480 Q380 400 360 310 Q350 270 355 230" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+  <!-- Light sparkles -->
+  <circle cx="430" cy="280" r="3" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="350" cy="200" r="2" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="480" cy="180" r="2.5" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="370" cy="350" r="2" fill="rgba(255,255,255,0.35)"/>
+  <circle cx="450" cy="320" r="1.5" fill="rgba(193,255,114,0.5)"/>
+  <!-- Circuit-like pattern at base -->
+  <g opacity="0.15" stroke="#C1FF72" stroke-width="1" fill="none">
+    <path d="M350 550 L350 520 L380 520"/>
+    <path d="M420 540 L420 510 L450 510 L450 490"/>
+    <path d="M370 560 L370 530 L400 530 L400 500"/>
+    <circle cx="380" cy="520" r="2" fill="#C1FF72"/>
+    <circle cx="450" cy="490" r="2" fill="#C1FF72"/>
+    <circle cx="400" cy="500" r="2" fill="#C1FF72"/>
+  </g>
+</svg>
